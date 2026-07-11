@@ -2,109 +2,90 @@
   <defs>
     <!-- Background Gradient -->
     <linearGradient id="expBg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0e1013" />
-      <stop offset="100%" stop-color="#050607" />
+      <stop offset="0%" stop-color="#0a0a0c" />
+      <stop offset="100%" stop-color="#020203" />
     </linearGradient>
 
-    <!-- Glow Filters -->
-    <filter id="orangeGlow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="4" result="blur" />
-      <feMerge>
-        <feMergeNode in="blur" />
-        <feMergeNode in="SourceGraphic" />
-      </feMerge>
-    </filter>
+    <!-- Elevated Panel Color -->
+    <linearGradient id="panelGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1c1c1e" />
+      <stop offset="100%" stop-color="#121214" />
+    </linearGradient>
 
-    <filter id="whiteGlow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="3" result="blur" />
-      <feMerge>
-        <feMergeNode in="blur" />
-        <feMergeNode in="SourceGraphic" />
-      </feMerge>
+    <!-- Frosted Border Gradient -->
+    <linearGradient id="frostBorder" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3a3a3c" />
+      <stop offset="100%" stop-color="#242426" />
+    </linearGradient>
+
+    <!-- Soft Shadow -->
+    <filter id="softShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#000000" flood-opacity="0.5" />
     </filter>
   </defs>
 
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&amp;family=Share+Tech+Mono&amp;display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@500;700;900&amp;family=SF+Pro+Text&amp;display=swap');
 
     .board-bg {
-      stroke: #ff6a00;
-      stroke-width: 1;
-      stroke-opacity: 0.15;
       fill: url(#expBg);
     }
 
     .timeline-axis {
-      stroke: #ff6a00;
+      stroke: #3a3a3c;
       stroke-width: 1.5;
-      stroke-opacity: 0.2;
-      stroke-dasharray: 4 4;
     }
 
     .exp-node {
-      fill: #0c101d;
-      stroke: #ff6a00;
+      fill: #1c1c1e;
+      stroke: #c5a880;
       stroke-width: 1.5;
     }
 
-    .exp-node-glow {
-      fill: #ff6a00;
-      filter: url(#orangeGlow);
-    }
-
     .exp-title {
-      font-family: 'Orbitron', sans-serif;
-      font-weight: 900;
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
       font-size: 13px;
       fill: #ffffff;
-      letter-spacing: 1px;
+      letter-spacing: 0.5px;
     }
 
     .exp-company {
-      font-family: 'Orbitron', sans-serif;
-      font-weight: 700;
+      font-family: 'Outfit', sans-serif;
+      font-weight: 500;
       font-size: 11px;
-      fill: #ff6a00;
-      letter-spacing: 1px;
+      fill: #c5a880;
+      letter-spacing: 0.5px;
     }
 
     .exp-date {
-      font-family: 'Share Tech Mono', monospace;
-      font-size: 11px;
-      fill: #64748b;
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 10px;
+      fill: #8e8e93;
     }
 
     .bullet-point {
-      font-family: 'Share Tech Mono', monospace;
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
       font-size: 11px;
-      fill: #94a3b8;
+      fill: #e5e7eb;
     }
 
-    .highlight-orange { fill: #ff6a00; font-weight: bold; }
-    .highlight-white { fill: #ffffff; font-weight: bold; }
-    .highlight-slate { fill: #cbd5e1; font-weight: bold; }
+    .highlight-gold { fill: #c5a880; font-weight: bold; }
 
     /* Box panels */
     .panel-box {
-      fill: #0c101d;
-      fill-opacity: 0.3;
-      stroke: #ff6a00;
-      stroke-opacity: 0.1;
+      fill: url(#panelGrad);
+      stroke: url(#frostBorder);
       stroke-width: 1;
-    }
-    
-    .panel-accent {
-      stroke-width: 2;
-      fill: none;
+      filter: url(#softShadow);
     }
   </style>
 
   <!-- Background Board -->
-  <rect class="board-bg" x="15" y="15" width="800" height="510" rx="8" />
+  <rect class="board-bg" width="100%" height="100%" rx="16" />
 
   <!-- Title -->
-  <text x="415" y="42" font-family="'Orbitron', sans-serif" font-size="12" fill="#ff6a00" font-weight="900" letter-spacing="3" text-anchor="middle" filter="url(#orangeGlow)">💼 PROFESSIONAL EXPERIENCE TIMELINE</text>
-  <text x="415" y="42" font-family="'Orbitron', sans-serif" font-size="12" fill="#ffffff" font-weight="900" letter-spacing="3" text-anchor="middle">💼 PROFESSIONAL EXPERIENCE TIMELINE</text>
+  <text x="40" y="42" font-family="'Outfit', sans-serif" font-size="12" fill="#ffffff" font-weight="700" letter-spacing="0.5">💼 PROFESSIONAL TIMELINE</text>
 
   <!-- Timeline Axis Line -->
   <line class="timeline-axis" x1="65" y1="80" x2="65" y2="480" />
@@ -112,60 +93,54 @@
   <!-- SECTION 1: Frigoglass (Nov 2025 - Jan 2026) -->
   <g transform="translate(0, 80)">
     <!-- Timeline Node -->
-    <circle class="exp-node-glow" cx="65" cy="30" r="6" />
-    <circle class="exp-node" cx="65" cy="30" r="4" />
+    <circle class="exp-node" cx="65" cy="30" r="5" />
 
     <!-- Container Panel -->
-    <rect class="panel-box" x="90" y="5" width="705" height="110" rx="4" />
-    <path class="panel-accent" d="M 90,25 L 90,5 L 110,5" stroke="#ff6a00" filter="url(#orangeGlow)" />
+    <rect class="panel-box" x="90" y="5" width="705" height="110" rx="12" />
 
     <!-- Content Header -->
-    <text x="110" y="25" class="exp-title">⚙️ SOFTWARE ENGINEERING INTERN</text>
-    <text x="110" y="42" class="exp-company">Frigoglass India Pvt. Ltd. <tspan class="exp-date">| Nov 2025 – Jan 2026 (Gurugram, IN)</tspan></text>
+    <text x="110" y="27" class="exp-title">⚙️ SOFTWARE ENGINEERING INTERN</text>
+    <text x="110" y="44" class="exp-company">Frigoglass India Pvt. Ltd. <tspan class="exp-date">| Nov 2025 – Jan 2026 (Gurugram, IN)</tspan></text>
 
     <!-- Details -->
-    <text x="110" y="65" class="bullet-point">• Optimized Postgres indices &amp; FastAPI/Express APIs: <tspan class="highlight-orange">20% query latency reduction</tspan>.</text>
-    <text x="110" y="80" class="bullet-point">• Engineered Django microservices with Pydantic validation: <tspan class="highlight-white">Mitigated OWASP Top 10 vulnerabilities</tspan>.</text>
+    <text x="110" y="65" class="bullet-point">• Optimized Postgres indices &amp; FastAPI/Express APIs: <tspan class="highlight-gold">20% query latency reduction</tspan>.</text>
+    <text x="110" y="80" class="bullet-point">• Engineered Django microservices with Pydantic validation: <tspan class="highlight-gold">Mitigated OWASP Top 10 vulnerabilities</tspan>.</text>
     <text x="110" y="95" class="bullet-point">• Bridged high-throughput React frontends with Supabase DB for the Nexus Campus platform.</text>
-    <text x="110" y="110" class="bullet-point">• Containerized Postman testing suites inside Docker pipelines: <tspan class="highlight-orange">30% reduction in QA overhead</tspan>.</text>
+    <text x="110" y="110" class="bullet-point">• Containerized Postman testing suites inside Docker pipelines: <tspan class="highlight-gold">30% reduction in QA overhead</tspan>.</text>
   </g>
 
   <!-- SECTION 2: Panaversal Technologies -->
   <g transform="translate(0, 215)">
     <!-- Timeline Node -->
-    <circle class="exp-node-glow" cx="65" cy="30" r="6" fill="#ffffff" filter="url(#whiteGlow)" />
-    <circle class="exp-node" cx="65" cy="30" r="4" stroke="#ffffff" />
+    <circle class="exp-node" cx="65" cy="30" r="5" />
 
     <!-- Container Panel -->
-    <rect class="panel-box" x="90" y="5" width="705" height="95" rx="4" />
-    <path class="panel-accent" d="M 90,25 L 90,5 L 110,5" stroke="#ffffff" filter="url(#whiteGlow)" />
+    <rect class="panel-box" x="90" y="5" width="705" height="95" rx="12" />
 
     <!-- Content Header -->
-    <text x="110" y="25" class="exp-title">🎨 FRONTEND DEVELOPER INTERN</text>
-    <text x="110" y="42" class="exp-company">Panaversal Technologies <tspan class="exp-date">| Internship Node</tspan></text>
+    <text x="110" y="27" class="exp-title">🎨 FRONTEND DEVELOPER INTERN</text>
+    <text x="110" y="44" class="exp-company">Panaversal Technologies <tspan class="exp-date">| Internship Node</tspan></text>
 
     <!-- Details -->
-    <text x="110" y="65" class="bullet-point">• Built modular, optimized React/TypeScript component grids: <tspan class="highlight-white">15% Lighthouse performance gain</tspan>.</text>
-    <text x="110" y="80" class="bullet-point">• Integrated Zustand state systems: Fulfilling <tspan class="highlight-orange">sub-100ms client-side state synchronization</tspan>.</text>
+    <text x="110" y="65" class="bullet-point">• Built modular, optimized React/TypeScript component grids: <tspan class="highlight-gold">15% Lighthouse performance gain</tspan>.</text>
+    <text x="110" y="80" class="bullet-point">• Integrated Zustand state systems: Fulfilling <tspan class="highlight-gold">sub-100ms client-side state synchronization</tspan>.</text>
     <text x="110" y="95" class="bullet-point">• Programmed interactive web transitions &amp; animations using GSAP and Framer Motion.</text>
   </g>
 
   <!-- SECTION 3: Independent Developer -->
   <g transform="translate(0, 335)">
     <!-- Timeline Node -->
-    <circle class="exp-node-glow" cx="65" cy="30" r="6" />
-    <circle class="exp-node" cx="65" cy="30" r="4" />
+    <circle class="exp-node" cx="65" cy="30" r="5" />
 
     <!-- Container Panel -->
-    <rect class="panel-box" x="90" y="5" width="705" height="95" rx="4" />
-    <path class="panel-accent" d="M 90,25 L 90,5 L 110,5" stroke="#ff6a00" filter="url(#orangeGlow)" />
+    <rect class="panel-box" x="90" y="5" width="705" height="95" rx="12" />
 
     <!-- Content Header -->
-    <text x="110" y="25" class="exp-title">🚀 INDEPENDENT FULL-STACK DEVELOPER</text>
-    <text x="110" y="42" class="exp-company">Freelance Engineering <tspan class="exp-date">| 2023 – Present (Remote Node)</tspan></text>
+    <text x="110" y="27" class="exp-title">🚀 INDEPENDENT FULL-STACK DEVELOPER</text>
+    <text x="110" y="44" class="exp-company">Freelance Engineering <tspan class="exp-date">| 2023 – Present (Remote Node)</tspan></text>
 
     <!-- Details -->
-    <text x="110" y="65" class="bullet-point">• Architected &amp; deployed <tspan class="highlight-orange">12+ production-grade web apps</tspan> &amp; custom GenAI agents (Next.js, FastAPI, Node).</text>
+    <text x="110" y="65" class="bullet-point">• Architected &amp; deployed <tspan class="highlight-gold">12+ production-grade web apps</tspan> &amp; custom GenAI agents (Next.js, FastAPI, Node).</text>
     <text x="110" y="80" class="bullet-point">• Wired JWT/OAuth 2.0 security schemes with Role-Based Access Control (RBAC) &amp; Stripe billing.</text>
     <text x="110" y="95" class="bullet-point">• Configured containerized Docker deployment matrices across AWS, Vercel, and Render clusters.</text>
   </g>

@@ -6,83 +6,73 @@
       <stop offset="100%" stop-color="#050607" />
     </linearGradient>
 
-    <!-- Glowing Filters -->
-    <filter id="orangeGlow" x="-25%" y="-25%" width="150%" height="150%">
-      <feGaussianBlur stdDeviation="5" result="blur" />
-      <feMerge>
-        <feMergeNode in="blur" />
-        <feMergeNode in="SourceGraphic" />
-      </feMerge>
-    </filter>
+    <!-- Elevated Panel Color -->
+    <linearGradient id="panelGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1c1c1e" />
+      <stop offset="100%" stop-color="#121214" />
+    </linearGradient>
 
-    <filter id="whiteGlow" x="-25%" y="-25%" width="150%" height="150%">
-      <feGaussianBlur stdDeviation="4" result="blur" />
-      <feMerge>
-        <feMergeNode in="blur" />
-        <feMergeNode in="SourceGraphic" />
-      </feMerge>
+    <!-- Frosted Border Gradient -->
+    <linearGradient id="frostBorder" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3a3a3c" />
+      <stop offset="100%" stop-color="#242426" />
+    </linearGradient>
+
+    <!-- Soft Shadow -->
+    <filter id="softShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#000000" flood-opacity="0.5" />
     </filter>
   </defs>
 
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&amp;family=Share+Tech+Mono&amp;display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@500;700;900&amp;family=SF+Pro+Text&amp;display=swap');
 
     .card-border {
-      stroke: #ff6a00;
-      stroke-width: 1.5;
-      stroke-opacity: 0.25;
-      fill: url(#cardBg);
+      stroke: url(#frostBorder);
+      stroke-width: 1;
+      fill: url(#panelGrad);
+      filter: url(#softShadow);
     }
 
     .project-title {
-      font-family: 'Orbitron', sans-serif;
+      font-family: 'Outfit', sans-serif;
       font-weight: 900;
       font-size: 18px;
       fill: #ffffff;
       letter-spacing: 2px;
     }
 
-    .project-title-glow {
-      font-family: 'Orbitron', sans-serif;
-      font-weight: 900;
-      font-size: 18px;
-      fill: #ff6a00;
-      letter-spacing: 2px;
-      opacity: 0.85;
-      filter: url(#orangeGlow);
-    }
-
     .project-subtitle {
-      font-family: 'Share Tech Mono', monospace;
+      font-family: 'Outfit', sans-serif;
+      font-weight: 500;
       font-size: 11px;
-      fill: #ff6a00;
+      fill: #c5a880;
       letter-spacing: 1px;
     }
 
     .desc-text {
-      font-family: 'Share Tech Mono', monospace;
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
       font-size: 12px;
-      fill: #e2e8f0;
+      fill: #e5e7eb;
     }
 
     .badge-rect {
-      fill: #0c101d;
-      stroke: #ff6a00;
-      stroke-opacity: 0.3;
-      stroke-dasharray: 4 2;
+      fill: #2c2c2e;
+      stroke: #3a3a3c;
+      stroke-width: 1;
     }
 
     .badge-text {
-      font-family: 'Share Tech Mono', monospace;
+      font-family: 'Outfit', sans-serif;
       font-size: 9px;
-      fill: #e2e8f0;
+      fill: #ffffff;
       text-anchor: middle;
     }
 
-    /* Sine Wave Shaders Animation */
+    /* Waveform Animation */
     .shader-wave {
       fill: none;
-      stroke: #ff6a00;
+      stroke: #c5a880;
       stroke-width: 1.5;
       stroke-dasharray: 100;
       stroke-dashoffset: 100;
@@ -91,7 +81,7 @@
 
     .shader-wave-secondary {
       fill: none;
-      stroke: #ffffff;
+      stroke: #8e8e93;
       stroke-width: 1;
       stroke-dasharray: 80;
       stroke-dashoffset: 80;
@@ -102,44 +92,19 @@
       0% { stroke-dashoffset: 200; }
       100% { stroke-dashoffset: 0; }
     }
-
-    /* Floating particles */
-    .particle {
-      fill: #ff6a00;
-      filter: url(#orangeGlow);
-      animation: floatUp 4s infinite ease-in-out;
-    }
-
-    .particle-delayed {
-      fill: #ffffff;
-      filter: url(#whiteGlow);
-      animation: floatUp 4s infinite ease-in-out;
-      animation-delay: 2s;
-    }
-
-    @keyframes floatUp {
-      0% { transform: translateY(0px) scale(1); opacity: 0.2; }
-      50% { transform: translateY(-15px) scale(1.3); opacity: 0.8; }
-      100% { transform: translateY(-30px) scale(0.8); opacity: 0; }
-    }
   </style>
 
   <!-- Card Frame -->
-  <rect class="card-border" x="15" y="15" width="800" height="170" rx="6" />
-
-  <!-- Side Accent Corner Brackets -->
-  <path d="M 15,35 L 15,15 L 35,15" fill="none" stroke="#ff6a00" stroke-width="3" filter="url(#orangeGlow)" />
-  <path d="M 815,145 L 815,165 L 795,165" fill="none" stroke="#ff6a00" stroke-width="3" filter="url(#orangeGlow)" />
+  <rect class="card-border" x="15" y="15" width="800" height="170" rx="12" />
 
   <!-- Left: Project Descriptions -->
   <g transform="translate(45, 45)">
-    <text class="project-title-glow">PROPOSAL</text>
     <text class="project-title">PROPOSAL</text>
-    <text x="120" y="5" class="project-subtitle">[ CINEMATIC THREE.JS EXPERIENCE ]</text>
+    <text x="120" y="-4" class="project-subtitle">[ CINEMATIC THREE.JS EXPERIENCE ]</text>
 
-    <text x="0" y="32" class="desc-text">• Premium 3D shaders, custom GLSL vertices, and mathematical particles.</text>
-    <text x="0" y="50" class="desc-text">• Highly interactive audio synthesized and scheduled in real-time via Tone.js.</text>
-    <text x="0" y="68" class="desc-text">• Fluid scrolling transitions &amp; animations powered by GSAP and ScrollTrigger.</text>
+    <text x="0" y="28" class="desc-text">• Premium 3D shaders, custom GLSL vertices, and mathematical particles.</text>
+    <text x="0" y="46" class="desc-text">• Highly interactive audio synthesized and scheduled in real-time via Tone.js.</text>
+    <text x="0" y="64" class="desc-text">• Fluid scrolling transitions &amp; animations powered by GSAP and ScrollTrigger.</text>
 
     <!-- Badges -->
     <g transform="translate(0, 88)">
@@ -147,7 +112,7 @@
       <text class="badge-text" x="35" y="12">THREE.JS</text>
 
       <rect class="badge-rect" x="80" y="0" width="105" height="18" rx="3" />
-      <text class="badge-text" x="132.5" y="12">GLSL SHADERS</text>
+      <text class="badge-text" x="52.5" y="12" transform="translate(80, 0)">GLSL SHADERS</text>
 
       <rect class="badge-rect" x="195" y="0" width="60" height="18" rx="3" />
       <text class="badge-text" x="225" y="12">GSAP</text>
@@ -160,27 +125,12 @@
     </g>
   </g>
 
-  <!-- Right: Shaders Waveform HUD visualizer -->
-  <line x1="560" y1="30" x2="560" y2="170" stroke="#ff6a00" stroke-opacity="0.15" stroke-dasharray="5 5" />
+  <!-- Right: Waveform HUD visualizer -->
+  <line x1="560" y1="30" x2="560" y2="170" stroke="#3a3a3c" stroke-width="1" stroke-opacity="0.5" />
 
-  <!-- 3D Math / Confetti Telemetry Simulator -->
   <g transform="translate(565, 30)">
-    <!-- Outer screen frame -->
-    <rect x="15" y="10" width="210" height="120" rx="3" fill="#080c10" fill-opacity="0.5" stroke="#ff6a00" stroke-opacity="0.1" />
-
-    <!-- Pulsing math waveforms -->
-    <g fill="none">
-      <path class="shader-wave" d="M 30,70 Q 55,20 85,85 T 145,55 T 195,70" />
-      <path class="shader-wave-secondary" d="M 30,70 Q 60,110 100,55 T 160,85 T 195,70" />
-
-      <!-- Particles Float -->
-      <circle class="particle" cx="70" cy="90" r="3" />
-      <circle class="particle-delayed" cx="130" cy="110" r="2.5" />
-      <circle class="particle" cx="160" cy="80" r="2" />
-      <circle class="particle-delayed" cx="95" cy="60" r="3.5" />
-    </g>
-
-    <!-- Telemetry Label -->
-    <text x="25" y="120" font-family="'Share Tech Mono', monospace" font-size="8" fill="#ff6a00" font-weight="bold">VERTEX_SHADER: COMPILING // 3D HEART NODES</text>
+    <rect x="15" y="10" width="210" height="120" rx="6" fill="#09090b" fill-opacity="0.5" stroke="#3a3a3c" stroke-width="1" />
+    <path class="shader-wave" d="M 30,70 Q 55,20 85,85 T 145,55 T 195,70" />
+    <path class="shader-wave-secondary" d="M 30,70 Q 60,110 100,55 T 160,85 T 195,70" />
   </g>
 </svg>

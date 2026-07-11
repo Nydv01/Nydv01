@@ -6,89 +6,79 @@
       <stop offset="100%" stop-color="#050607" />
     </linearGradient>
 
-    <!-- Glowing Filters -->
-    <filter id="orangeGlow" x="-25%" y="-25%" width="150%" height="150%">
-      <feGaussianBlur stdDeviation="4" result="blur" />
-      <feMerge>
-        <feMergeNode in="blur" />
-        <feMergeNode in="SourceGraphic" />
-      </feMerge>
-    </filter>
+    <!-- Elevated Panel Color -->
+    <linearGradient id="panelGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1c1c1e" />
+      <stop offset="100%" stop-color="#121214" />
+    </linearGradient>
 
-    <filter id="whiteGlow" x="-25%" y="-25%" width="150%" height="150%">
-      <feGaussianBlur stdDeviation="5" result="blur" />
-      <feMerge>
-        <feMergeNode in="blur" />
-        <feMergeNode in="SourceGraphic" />
-      </feMerge>
+    <!-- Frosted Border Gradient -->
+    <linearGradient id="frostBorder" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3a3a3c" />
+      <stop offset="100%" stop-color="#242426" />
+    </linearGradient>
+
+    <!-- Soft Shadow -->
+    <filter id="softShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#000000" flood-opacity="0.5" />
     </filter>
   </defs>
 
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&amp;family=Share+Tech+Mono&amp;display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@500;700;900&amp;family=SF+Pro+Text&amp;display=swap');
 
     .card-border {
-      stroke: #ff6a00;
-      stroke-width: 1.5;
-      stroke-opacity: 0.25;
-      fill: url(#cardBg);
+      stroke: url(#frostBorder);
+      stroke-width: 1;
+      fill: url(#panelGrad);
+      filter: url(#softShadow);
     }
 
     .project-title {
-      font-family: 'Orbitron', sans-serif;
+      font-family: 'Outfit', sans-serif;
       font-weight: 900;
       font-size: 18px;
       fill: #ffffff;
       letter-spacing: 2px;
     }
 
-    .project-title-glow {
-      font-family: 'Orbitron', sans-serif;
-      font-weight: 900;
-      font-size: 18px;
-      fill: #ff6a00;
-      letter-spacing: 2px;
-      opacity: 0.85;
-      filter: url(#orangeGlow);
-    }
-
     .project-subtitle {
-      font-family: 'Share Tech Mono', monospace;
+      font-family: 'Outfit', sans-serif;
+      font-weight: 500;
       font-size: 11px;
-      fill: #ff6a00;
+      fill: #c5a880;
       letter-spacing: 1px;
     }
 
     .desc-text {
-      font-family: 'Share Tech Mono', monospace;
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
       font-size: 12px;
-      fill: #94a3b8;
+      fill: #e5e7eb;
     }
 
     .badge-rect {
-      fill: #0c101d;
-      stroke: #ff6a00;
-      stroke-opacity: 0.3;
-      stroke-dasharray: 4 2;
+      fill: #2c2c2e;
+      stroke: #3a3a3c;
+      stroke-width: 1;
     }
 
     .badge-text {
-      font-family: 'Share Tech Mono', monospace;
+      font-family: 'Outfit', sans-serif;
       font-size: 9px;
-      fill: #e2e8f0;
+      fill: #ffffff;
       text-anchor: middle;
     }
 
-    /* Radar/Campus Grid Animation */
+    /* Radar / Location Circle Animation */
     .radar-circle {
-      stroke: #ff6a00;
+      stroke: #c5a880;
       stroke-width: 1;
       stroke-opacity: 0.25;
       fill: none;
     }
 
     .radar-circle-pulse {
-      stroke: #ff6a00;
+      stroke: #c5a880;
       stroke-width: 1.5;
       fill: none;
       animation: mapPing 3s infinite ease-out;
@@ -99,41 +89,19 @@
       0% { r: 10px; opacity: 1; }
       100% { r: 40px; opacity: 0; }
     }
-
-    .grid-lines {
-      stroke: #ff6a00;
-      stroke-width: 0.5;
-      stroke-opacity: 0.15;
-    }
-
-    .campus-pin {
-      fill: #ffffff;
-      filter: url(#whiteGlow);
-      animation: pinBounce 2s infinite ease-in-out;
-    }
-
-    @keyframes pinBounce {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-5px); }
-    }
   </style>
 
   <!-- Card Frame -->
-  <rect class="card-border" x="15" y="15" width="800" height="170" rx="6" />
+  <rect class="card-border" x="15" y="15" width="800" height="170" rx="12" />
 
-  <!-- Side Accent Corner Brackets -->
-  <path d="M 15,35 L 15,15 L 35,15" fill="none" stroke="#ff6a00" stroke-width="3" filter="url(#orangeGlow)" />
-  <path d="M 815,145 L 815,165 L 795,165" fill="none" stroke="#ff6a00" stroke-width="3" filter="url(#orangeGlow)" />
-
-  <!-- Left: Project Descriptions -->
+  <!-- Left: Content details -->
   <g transform="translate(45, 45)">
-    <text class="project-title-glow">NEXUS CAMPUS</text>
     <text class="project-title">NEXUS CAMPUS</text>
-    <text x="145" y="5" class="project-subtitle">[ UNIVERSITY CAMPUS SUPER APP ]</text>
+    <text x="145" y="-4" class="project-subtitle">[ UNIVERSITY CAMPUS SUPER APP ]</text>
 
-    <text x="0" y="32" class="desc-text">• Centralized university course reviews, study groups, and student trading.</text>
-    <text x="0" y="50" class="desc-text">• Secure student verification engine via Supabase RLS and JWT guards.</text>
-    <text x="0" y="68" class="desc-text">• Built interactive campus map pins displaying localized events via Leaflet.</text>
+    <text x="0" y="28" class="desc-text">• Centralized university course reviews, study groups, and student trading.</text>
+    <text x="0" y="46" class="desc-text">• Secure student verification engine via Supabase RLS and JWT guards.</text>
+    <text x="0" y="64" class="desc-text">• Built interactive campus map pins displaying localized events via Leaflet.</text>
 
     <!-- Badges -->
     <g transform="translate(0, 88)">
@@ -155,38 +123,14 @@
   </g>
 
   <!-- Right: Campus Map Radar HUD visualizer -->
-  <line x1="560" y1="30" x2="560" y2="170" stroke="#ff6a00" stroke-opacity="0.15" stroke-dasharray="5 5" />
+  <line x1="560" y1="30" x2="560" y2="170" stroke="#3a3a3c" stroke-width="1" stroke-opacity="0.5" />
 
-  <!-- Live Map / Event Tracker Simulation -->
   <g transform="translate(565, 30)">
-    <!-- Outer Box frame -->
-    <rect x="15" y="10" width="210" height="120" rx="3" fill="#080c10" fill-opacity="0.5" stroke="#ff6a00" stroke-opacity="0.1" />
-
-    <!-- Campus Geolocation Grid -->
-    <g>
-      <!-- Grid cross sections -->
-      <line class="grid-lines" x1="120" y1="10" x2="120" y2="130" />
-      <line class="grid-lines" x1="20" y1="70" x2="220" y2="70" />
-      
-      <line class="grid-lines" x1="70" y1="10" x2="70" y2="130" />
-      <line class="grid-lines" x1="170" y1="10" x2="170" y2="130" />
-      <line class="grid-lines" x1="20" y1="40" x2="220" y2="40" />
-      <line class="grid-lines" x1="20" y1="100" x2="220" y2="100" />
-
-      <!-- Map Radar Rings -->
-      <circle cx="120" cy="70" r="25" class="radar-circle" />
-      <circle cx="120" cy="70" r="10" class="radar-circle" />
-      <circle class="radar-circle-pulse" cx="120" cy="70" r="15" />
-
-      <!-- Map Pin (Pulsing / Bouncing) -->
-      <g transform="translate(120, 70)" class="campus-pin">
-        <!-- Pin path -->
-        <path d="M 0,0 C -5,-8 -10,-12 -10,-20 C -10,-28 -2,-32 5,-32 C 12,-32 20,-28 20,-20 C 20,-12 15,-8 10,0 Z" scale="0.5" fill="#ff6a00" />
-        <circle cx="5" cy="-20" r="4" fill="#ffffff" />
-      </g>
-    </g>
-
-    <!-- Map Label -->
-    <text x="25" y="120" font-family="'Share Tech Mono', monospace" font-size="8" fill="#ff6a00" font-weight="bold">MAP_RESOLVER: CAMPUS_PULSE_ACTIVE</text>
+    <rect x="15" y="10" width="210" height="120" rx="6" fill="#09090b" fill-opacity="0.5" stroke="#3a3a3c" stroke-width="1" />
+    <circle cx="120" cy="70" r="25" class="radar-circle" />
+    <circle cx="120" cy="70" r="10" class="radar-circle" />
+    <circle class="radar-circle-pulse" cx="120" cy="70" r="15" />
+    <!-- Pin -->
+    <circle cx="120" cy="70" r="4" fill="#ffffff" />
   </g>
 </svg>

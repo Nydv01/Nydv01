@@ -2,35 +2,23 @@
   <defs>
     <!-- Background Gradient -->
     <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#080c16" />
-      <stop offset="50%" stop-color="#04060b" />
-      <stop offset="100%" stop-color="#020305" />
+      <stop offset="0%" stop-color="#0a0a0c" />
+      <stop offset="100%" stop-color="#020203" />
     </linearGradient>
 
-    <!-- Tech Grid Pattern -->
-    <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
-      <circle cx="1" cy="1" r="1" fill="#00f3ff" fill-opacity="0.08" />
-      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#00f3ff" stroke-width="0.5" stroke-opacity="0.03" />
-    </pattern>
+    <!-- Elevated Panel Color -->
+    <linearGradient id="panelGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1c1c1e" />
+      <stop offset="100%" stop-color="#121214" />
+    </linearGradient>
 
-    <!-- Glow Filters -->
-    <filter id="cyanGlow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="5" result="blur" />
-      <feMerge>
-        <feMergeNode in="blur" />
-        <feMergeNode in="SourceGraphic" />
-      </feMerge>
-    </filter>
-    
-    <filter id="purpleGlow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="6" result="blur" />
-      <feMerge>
-        <feMergeNode in="blur" />
-        <feMergeNode in="SourceGraphic" />
-      </feMerge>
-    </filter>
+    <!-- Frosted Border Gradient -->
+    <linearGradient id="frostBorder" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3a3a3c" />
+      <stop offset="100%" stop-color="#242426" />
+    </linearGradient>
 
-    <!-- Typewriter Clip Path (Corrected width to prevent clipping) -->
+    <!-- Typewriter Clip Path -->
     <clipPath id="typewriterClip">
       <rect id="typewriterRect" x="60" y="145" width="0" height="30">
         <animate attributeName="width" 
@@ -41,92 +29,64 @@
       </rect>
     </clipPath>
 
-    <!-- Circuit Laser Gradient -->
-    <linearGradient id="laserGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#9e00ff" stop-opacity="0" />
-      <stop offset="50%" stop-color="#00f3ff" stop-opacity="1" />
-      <stop offset="100%" stop-color="#9e00ff" stop-opacity="0" />
-    </linearGradient>
+    <!-- Subtle Shadows -->
+    <filter id="softShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000000" flood-opacity="0.5" />
+    </filter>
   </defs>
 
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&amp;family=Share+Tech+Mono&amp;display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700;900&amp;display=swap');
 
     .title {
-      font-family: 'Orbitron', sans-serif;
+      font-family: 'Outfit', -apple-system, sans-serif;
       font-weight: 900;
-      font-size: 44px;
+      font-size: 46px;
       fill: #ffffff;
-      letter-spacing: 7px;
-    }
-
-    .title-glow {
-      font-family: 'Orbitron', sans-serif;
-      font-weight: 900;
-      font-size: 44px;
-      fill: #00f3ff;
-      letter-spacing: 7px;
-      opacity: 0.85;
-      filter: url(#cyanGlow);
+      letter-spacing: 6px;
     }
 
     .subtitle {
-      font-family: 'Orbitron', sans-serif;
-      font-weight: 700;
+      font-family: 'Outfit', -apple-system, sans-serif;
+      font-weight: 500;
       font-size: 13px;
-      fill: #9e00ff;
+      fill: #c5a880; /* Apple Pro Gold */
       letter-spacing: 3px;
-    }
-
-    .subtitle-glow {
-      font-family: 'Orbitron', sans-serif;
-      font-weight: 700;
-      font-size: 13px;
-      fill: #9e00ff;
-      letter-spacing: 3px;
-      opacity: 0.8;
-      filter: url(#purpleGlow);
     }
 
     .hud-label {
-      font-family: 'Share Tech Mono', monospace;
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
       font-size: 11px;
-      fill: #64748b;
+      fill: #8e8e93;
     }
 
     .hud-value {
-      font-family: 'Share Tech Mono', monospace;
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
       font-size: 11px;
-      fill: #00f3ff;
-      font-weight: bold;
+      fill: #ffffff;
+      font-weight: 500;
     }
 
     .hud-alert {
-      font-family: 'Share Tech Mono', monospace;
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
       font-size: 11px;
-      fill: #00ff66;
-      font-weight: bold;
-      animation: alertPulse 1s step-end infinite;
-    }
-
-    @keyframes alertPulse {
-      0%, 100% { fill: #00ff66; opacity: 1; }
-      50% { fill: #00ff66; opacity: 0.3; }
+      fill: #30d158; /* Apple System Green */
+      font-weight: 500;
     }
 
     /* Circuit Paths Animation */
     .circuit-path {
-      stroke: url(#laserGrad);
-      stroke-width: 2;
-      stroke-dasharray: 120 400;
-      animation: circuitRun 5s linear infinite;
+      stroke: #3a3a3c;
+      stroke-width: 1;
+      stroke-dasharray: 100 400;
+      animation: circuitRun 6s linear infinite;
     }
 
     .circuit-path-reverse {
-      stroke: url(#laserGrad);
-      stroke-width: 1.5;
+      stroke: #2c2c2e;
+      stroke-width: 1;
       stroke-dasharray: 80 300;
-      animation: circuitRun 4s linear infinite reverse;
+      animation: circuitRun 5s linear infinite reverse;
     }
 
     @keyframes circuitRun {
@@ -136,65 +96,42 @@
 
     /* System Status Bars */
     .metric-bar-fill {
-      fill: #00f3ff;
-      filter: url(#cyanGlow);
-      animation: barStretch 3s ease-in-out infinite alternate;
+      fill: #8e8e93;
+      animation: barStretch 4s ease-in-out infinite alternate;
     }
 
     @keyframes barStretch {
-      0% { width: 40px; }
-      100% { width: 110px; }
-    }
-
-    /* Glitch Grid Animation */
-    .glitch-grid {
-      stroke: #00f3ff;
-      stroke-opacity: 0.15;
-      stroke-width: 0.5;
-      animation: gridShudder 10s ease-in-out infinite;
-    }
-
-    @keyframes gridShudder {
-      0%, 94%, 96%, 100% { transform: translate(0, 0); }
-      95% { transform: translate(-1px, 1px); stroke-opacity: 0.3; }
-      97% { transform: translate(1px, -1px); }
-    }
-
-    .cursor {
-      fill: #9e00ff;
-      filter: url(#purpleGlow);
+      0% { width: 30px; }
+      100% { width: 100px; }
     }
   </style>
 
   <!-- Background Base -->
   <rect width="100%" height="100%" fill="url(#bgGrad)" />
-  <rect class="glitch-grid" width="100%" height="100%" fill="url(#grid)" />
 
-  <!-- Isometric Circuit Lines -->
+  <!-- Thin Tech Lines -->
   <path class="circuit-path" d="M 50,50 L 220,50 L 280,110 L 460,110 L 510,60 L 780,60" fill="none" />
   <path class="circuit-path-reverse" d="M 80,230 L 250,230 L 300,180 L 480,180 L 520,220 L 750,220" fill="none" />
 
-  <!-- Futuristic Corner Brackets -->
-  <path d="M 25,50 L 25,25 L 50,25" fill="none" stroke="#00f3ff" stroke-width="2" stroke-opacity="0.3" />
-  <path d="M 805,50 L 805,25 L 780,25" fill="none" stroke="#9e00ff" stroke-width="2" stroke-opacity="0.3" />
-  <path d="M 25,230 L 25,255 L 50,255" fill="none" stroke="#9e00ff" stroke-width="2" stroke-opacity="0.3" />
-  <path d="M 805,230 L 805,255 L 780,255" fill="none" stroke="#00f3ff" stroke-width="2" stroke-opacity="0.3" />
+  <!-- Corner Brackets -->
+  <path d="M 25,50 L 25,25 L 50,25" fill="none" stroke="#3a3a3c" stroke-width="1" />
+  <path d="M 805,50 L 805,25 L 780,25" fill="none" stroke="#3a3a3c" stroke-width="1" />
+  <path d="M 25,230 L 25,255 L 50,255" fill="none" stroke="#3a3a3c" stroke-width="1" />
+  <path d="M 805,230 L 805,255 L 780,255" fill="none" stroke="#3a3a3c" stroke-width="1" />
 
   <!-- Header Text -->
   <g transform="translate(60, 115)">
-    <!-- Main Glowing Logo -->
-    <text class="title-glow">NITIN YADAV</text>
+    <!-- Main Logo -->
     <text class="title">NITIN YADAV</text>
   </g>
 
-  <!-- Single Typewriter Subtitle (Glow & Foreground) -->
+  <!-- Typewriter Subtitle -->
   <g clip-path="url(#typewriterClip)">
-    <text x="60" y="165" class="subtitle-glow">FULL-STACK ENGINEER // AI &amp; CYBERSECURITY</text>
     <text x="60" y="165" class="subtitle">FULL-STACK ENGINEER // AI &amp; CYBERSECURITY</text>
   </g>
 
-  <!-- Blinking Cursor following the typing text -->
-  <rect class="cursor" x="60" y="150" width="3" height="18">
+  <!-- Blinking Cursor -->
+  <rect fill="#c5a880" x="60" y="150" width="2" height="18">
     <animateTransform attributeName="transform" 
                       type="translate" 
                       values="0 0; 0 0; 455 0; 455 0; 0 0; 0 0" 
@@ -208,39 +145,25 @@
              repeatCount="indefinite" />
   </rect>
 
-  <!-- Right Side: Developer Cockpit Telemetry Console -->
+  <!-- Right Side: Apple Style Telemetry Console -->
   <g transform="translate(560, 85)">
     <!-- Console border -->
-    <rect x="-10" y="-10" width="220" height="110" rx="4" fill="#070b13" fill-opacity="0.6" stroke="#00f3ff" stroke-opacity="0.15" />
-    <rect x="-10" y="-10" width="220" height="110" rx="4" fill="none" stroke="#9e00ff" stroke-opacity="0.1" stroke-dasharray="10 5" />
+    <rect x="-10" y="-10" width="220" height="110" rx="10" fill="url(#panelGrad)" stroke="url(#frostBorder)" stroke-width="1" filter="url(#softShadow)" />
     
-    <!-- Crosshair telemetry -->
-    <circle cx="195" cy="15" r="4" fill="none" stroke="#00f3ff" stroke-opacity="0.3" />
-    <line x1="191" y1="15" x2="199" y2="15" stroke="#00f3ff" stroke-opacity="0.3" />
-    <line x1="195" y1="11" x2="195" y2="19" stroke="#00f3ff" stroke-opacity="0.3" />
-
     <!-- Telemetry Variables -->
-    <text x="10" y="20" class="hud-label">COGNITIVE_CORE:</text>
-    <text x="115" y="20" class="hud-value">ONLINE</text>
+    <text x="15" y="22" class="hud-label">COGNITIVE_CORE:</text>
+    <text x="125" y="22" class="hud-value">ONLINE</text>
 
-    <text x="10" y="40" class="hud-label">THREAT_DEFENSE:</text>
-    <text x="115" y="40" class="hud-alert">SECURE [100%]</text>
+    <text x="15" y="44" class="hud-label">THREAT_DEFENSE:</text>
+    <text x="125" y="44" class="hud-alert">SECURE [100%]</text>
 
-    <text x="10" y="60" class="hud-label">ENGINE_LOAD:</text>
+    <text x="15" y="66" class="hud-label">ENGINE_LOAD:</text>
     
-    <!-- Animated metric bar -->
-    <rect x="95" y="52" width="110" height="6" rx="2" fill="#1e293b" />
-    <rect class="metric-bar-fill" x="95" y="52" width="65" height="6" rx="2" />
+    <!-- Status bar -->
+    <rect x="95" y="58" width="100" height="5" rx="2.5" fill="#2c2c2e" />
+    <rect class="metric-bar-fill" x="95" y="58" width="60" height="5" rx="2.5" />
 
-    <!-- Decoy Hex logs scrolling or system state -->
-    <text x="10" y="85" class="hud-label" font-size="9" fill="#475569">> sys_init --success // 12+ mods loaded</text>
-  </g>
-
-  <!-- Animated Center Telemetry Vector -->
-  <g transform="translate(490, 110)" stroke="#00f3ff" stroke-opacity="0.2" fill="none">
-    <ellipse cx="20" cy="30" rx="15" ry="30" stroke-dasharray="2 4">
-      <animateTransform attributeName="transform" type="rotate" from="0 20 30" to="360 20 30" dur="10s" repeatCount="indefinite" />
-    </ellipse>
-    <circle cx="20" cy="30" r="4" fill="#00f3ff" filter="url(#cyanGlow)" />
+    <!-- Terminal log -->
+    <text x="15" y="90" class="hud-label" font-size="9" fill="#8e8e93">> sys_init // 12+ modules loaded</text>
   </g>
 </svg>

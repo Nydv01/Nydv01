@@ -6,131 +6,89 @@
       <stop offset="100%" stop-color="#050607" />
     </linearGradient>
 
-    <!-- Glowing Filters -->
-    <filter id="orangeGlow" x="-25%" y="-25%" width="150%" height="150%">
-      <feGaussianBlur stdDeviation="5" result="blur" />
-      <feMerge>
-        <feMergeNode in="blur" />
-        <feMergeNode in="SourceGraphic" />
-      </feMerge>
-    </filter>
+    <!-- Elevated Panel Color -->
+    <linearGradient id="panelGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1c1c1e" />
+      <stop offset="100%" stop-color="#121214" />
+    </linearGradient>
 
-    <filter id="whiteGlow" x="-25%" y="-25%" width="150%" height="150%">
-      <feGaussianBlur stdDeviation="4" result="blur" />
-      <feMerge>
-        <feMergeNode in="blur" />
-        <feMergeNode in="SourceGraphic" />
-      </feMerge>
+    <!-- Frosted Border Gradient -->
+    <linearGradient id="frostBorder" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3a3a3c" />
+      <stop offset="100%" stop-color="#242426" />
+    </linearGradient>
+
+    <!-- Soft Shadow -->
+    <filter id="softShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#000000" flood-opacity="0.5" />
     </filter>
   </defs>
 
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&amp;family=Share+Tech+Mono&amp;display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@500;700;900&amp;family=SF+Pro+Text&amp;display=swap');
 
     .card-border {
-      stroke: #ff6a00;
-      stroke-width: 1.5;
-      stroke-opacity: 0.25;
-      fill: url(#cardBg);
+      stroke: url(#frostBorder);
+      stroke-width: 1;
+      fill: url(#panelGrad);
+      filter: url(#softShadow);
     }
 
     .project-title {
-      font-family: 'Orbitron', sans-serif;
+      font-family: 'Outfit', sans-serif;
       font-weight: 900;
       font-size: 18px;
       fill: #ffffff;
       letter-spacing: 2px;
     }
 
-    .project-title-glow {
-      font-family: 'Orbitron', sans-serif;
-      font-weight: 900;
-      font-size: 18px;
-      fill: #ff6a00;
-      letter-spacing: 2px;
-      opacity: 0.85;
-      filter: url(#orangeGlow);
-    }
-
     .project-subtitle {
-      font-family: 'Share Tech Mono', monospace;
+      font-family: 'Outfit', sans-serif;
+      font-weight: 500;
       font-size: 11px;
-      fill: #ff6a00;
+      fill: #c5a880;
       letter-spacing: 1px;
     }
 
     .desc-text {
-      font-family: 'Share Tech Mono', monospace;
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
       font-size: 12px;
-      fill: #94a3b8;
+      fill: #e5e7eb;
     }
 
     .badge-rect {
-      fill: #0c101d;
-      stroke: #ff6a00;
-      stroke-opacity: 0.3;
-      stroke-dasharray: 4 2;
+      fill: #2c2c2e;
+      stroke: #3a3a3c;
+      stroke-width: 1;
     }
 
     .badge-text {
-      font-family: 'Share Tech Mono', monospace;
+      font-family: 'Outfit', sans-serif;
       font-size: 9px;
-      fill: #e2e8f0;
+      fill: #ffffff;
       text-anchor: middle;
     }
 
-    /* Attack Vectors Dash Flow */
-    .attack-path {
-      stroke: #ff6a00;
-      stroke-width: 1.5;
-      stroke-dasharray: 6 6;
-      animation: attackFlow 4s linear infinite;
-    }
-
-    @keyframes attackFlow {
-      to { stroke-dashoffset: -60; }
-    }
-
-    .pulse-node {
-      animation: ping 2s infinite ease-in-out;
-    }
-
-    @keyframes ping {
-      0%, 100% { r: 3px; opacity: 0.4; }
-      50% { r: 6px; opacity: 1; }
-    }
-
-    /* Scanning Radar Line */
-    .radar-beam {
-      stroke: #ff6a00;
-      stroke-width: 1;
+    /* Target Nodes & Radar sweep */
+    .radar-circle {
+      stroke: #c5a880;
       stroke-opacity: 0.2;
-      animation: radarScan 3s linear infinite;
-    }
-
-    @keyframes radarScan {
-      0% { x1: 580; x2: 580; }
-      50% { x1: 790; x2: 790; }
-      100% { x1: 580; x2: 580; }
+      stroke-width: 1;
+      fill: none;
     }
   </style>
 
   <!-- Card Frame -->
-  <rect class="card-border" x="15" y="15" width="800" height="170" rx="6" />
-
-  <!-- Side Accent Corner Brackets -->
-  <path d="M 15,35 L 15,15 L 35,15" fill="none" stroke="#ff6a00" stroke-width="3" filter="url(#orangeGlow)" />
-  <path d="M 815,145 L 815,165 L 795,165" fill="none" stroke="#ff6a00" stroke-width="3" filter="url(#orangeGlow)" />
+  <rect class="card-border" x="15" y="15" width="800" height="170" rx="12" />
 
   <!-- Left: Project Descriptions -->
   <g transform="translate(45, 45)">
-    <text class="project-title-glow">AEGISNET</text>
     <text class="project-title">AEGISNET</text>
-    <text x="135" y="5" class="project-subtitle">[ AI CYBER THREAT DETECTOR &amp; RESPONSE SOC ]</text>
+    <text x="135" y="-4" class="project-subtitle">[ AI CYBER THREAT DETECTOR &amp; RESPONSE SOC ]</text>
 
-    <text x="0" y="32" class="desc-text">• Shipped a production Random Forest IDS &amp; Q-Learning response agent.</text>
-    <text x="0" y="50" class="desc-text">• WebSocket telemetry pipelines stream incident threats directly to React HUDs.</text>
-    <text x="0" y="68" class="desc-text">• Mitigates DDoS, SQLi, Port Scan, and Brute Force attack simulation chains.</text>
+    <text x="0" y="28" class="desc-text">• Shipped a production Random Forest IDS &amp; Q-Learning response agent.</text>
+    <text x="0" y="46" class="desc-text">• WebSocket telemetry pipelines stream incident threats directly to React HUDs.</text>
+    <text x="0" y="64" class="desc-text">• Mitigates DDoS, SQLi, Port Scan, and Brute Force attack simulation chains.</text>
 
     <!-- Badges -->
     <g transform="translate(0, 88)">
@@ -152,40 +110,14 @@
   </g>
 
   <!-- Right: Network Threat Matrix HUD visualizer -->
-  <line x1="560" y1="30" x2="560" y2="170" stroke="#ff6a00" stroke-opacity="0.15" stroke-dasharray="5 5" />
+  <line x1="560" y1="30" x2="560" y2="170" stroke="#3a3a3c" stroke-width="1" stroke-opacity="0.5" />
 
   <!-- SOC Network Topology Graph -->
   <g transform="translate(565, 30)">
-    <!-- Radar scanner beam -->
-    <line class="radar-beam" x1="580" y1="10" x2="580" y2="130" />
-    
-    <!-- Outer Box frame -->
-    <rect x="15" y="10" width="210" height="120" rx="3" fill="#080c10" fill-opacity="0.5" stroke="#ff6a00" stroke-opacity="0.1" />
-
-    <!-- Server Target Nodes -->
-    <g fill="none">
-      <!-- Network grid lines -->
-      <line x1="40" y1="70" x2="110" y2="35" stroke="#718096" stroke-opacity="0.2" />
-      <line x1="40" y1="70" x2="110" y2="105" stroke="#718096" stroke-opacity="0.2" />
-      <line x1="110" y1="35" x2="180" y2="70" stroke="#718096" stroke-opacity="0.2" />
-      <line x1="110" y1="105" x2="180" y2="70" stroke="#718096" stroke-opacity="0.2" />
-
-      <!-- Attack flow path -->
-      <path class="attack-path" d="M 40,70 L 110,35 L 180,70" />
-      
-      <!-- Nodes visual representation -->
-      <circle cx="40" cy="70" r="5" fill="#ff6a00" filter="url(#orangeGlow)" />
-      <circle class="pulse-node" cx="40" cy="70" r="5" fill="#ff6a00" />
-      
-      <!-- Shield interception node -->
-      <circle cx="110" cy="35" r="5" fill="#ffffff" filter="url(#whiteGlow)" />
-      <circle class="pulse-node" cx="110" cy="35" r="5" fill="#ffffff" />
-      
-      <circle cx="110" cy="105" r="5" fill="#ff6a00" />
-      <circle cx="180" cy="70" r="5" fill="#ff6a00" />
-    </g>
-
-    <!-- Telemetry labels -->
-    <text x="25" y="120" font-family="'Share Tech Mono', monospace" font-size="8" fill="#ff6a00" font-weight="bold">THREAT_VECTOR [MITIGATED]</text>
+    <rect x="15" y="10" width="210" height="120" rx="6" fill="#09090b" fill-opacity="0.5" stroke="#3a3a3c" stroke-width="1" />
+    <circle cx="120" cy="70" r="25" class="radar-circle" />
+    <circle cx="120" cy="70" r="10" class="radar-circle" />
+    <!-- Pulse node -->
+    <circle cx="120" cy="70" r="4" fill="#30d158" />
   </g>
 </svg>

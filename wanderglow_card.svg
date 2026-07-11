@@ -6,117 +6,89 @@
       <stop offset="100%" stop-color="#050607" />
     </linearGradient>
 
-    <!-- Glowing Filters -->
-    <filter id="orangeGlow" x="-25%" y="-25%" width="150%" height="150%">
-      <feGaussianBlur stdDeviation="5" result="blur" />
-      <feMerge>
-        <feMergeNode in="blur" />
-        <feMergeNode in="SourceGraphic" />
-      </feMerge>
-    </filter>
+    <!-- Elevated Panel Color -->
+    <linearGradient id="panelGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1c1c1e" />
+      <stop offset="100%" stop-color="#121214" />
+    </linearGradient>
 
-    <filter id="whiteGlow" x="-25%" y="-25%" width="150%" height="150%">
-      <feGaussianBlur stdDeviation="4" result="blur" />
-      <feMerge>
-        <feMergeNode in="blur" />
-        <feMergeNode in="SourceGraphic" />
-      </feMerge>
+    <!-- Frosted Border Gradient -->
+    <linearGradient id="frostBorder" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3a3a3c" />
+      <stop offset="100%" stop-color="#242426" />
+    </linearGradient>
+
+    <!-- Soft Shadow -->
+    <filter id="softShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#000000" flood-opacity="0.5" />
     </filter>
   </defs>
 
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&amp;family=Share+Tech+Mono&amp;display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@500;700;900&amp;family=SF+Pro+Text&amp;display=swap');
 
     .card-border {
-      stroke: #ff6a00;
-      stroke-width: 1.5;
-      stroke-opacity: 0.25;
-      fill: url(#cardBg);
+      stroke: url(#frostBorder);
+      stroke-width: 1;
+      fill: url(#panelGrad);
+      filter: url(#softShadow);
     }
 
     .project-title {
-      font-family: 'Orbitron', sans-serif;
+      font-family: 'Outfit', sans-serif;
       font-weight: 900;
       font-size: 18px;
       fill: #ffffff;
       letter-spacing: 2px;
     }
 
-    .project-title-glow {
-      font-family: 'Orbitron', sans-serif;
-      font-weight: 900;
-      font-size: 18px;
-      fill: #ff6a00;
-      letter-spacing: 2px;
-      opacity: 0.85;
-      filter: url(#orangeGlow);
-    }
-
     .project-subtitle {
-      font-family: 'Share Tech Mono', monospace;
+      font-family: 'Outfit', sans-serif;
+      font-weight: 500;
       font-size: 11px;
-      fill: #ff6a00;
+      fill: #c5a880;
       letter-spacing: 1px;
     }
 
     .desc-text {
-      font-family: 'Share Tech Mono', monospace;
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
       font-size: 12px;
-      fill: #94a3b8;
+      fill: #e5e7eb;
     }
 
     .badge-rect {
-      fill: #0c101d;
-      stroke: #ff6a00;
-      stroke-opacity: 0.3;
-      stroke-dasharray: 4 2;
+      fill: #2c2c2e;
+      stroke: #3a3a3c;
+      stroke-width: 1;
     }
 
     .badge-text {
-      font-family: 'Share Tech Mono', monospace;
+      font-family: 'Outfit', sans-serif;
       font-size: 9px;
-      fill: #e2e8f0;
+      fill: #ffffff;
       text-anchor: middle;
     }
 
-    /* Orbital Routes Animation */
+    /* Orbital lines */
     .flight-path {
-      stroke: #ff6a00;
-      stroke-width: 1.5;
-      stroke-dasharray: 4 4;
-      animation: flightFlow 6s linear infinite;
-    }
-
-    @keyframes flightFlow {
-      to { stroke-dashoffset: -40; }
-    }
-
-    .pulse-pin {
-      animation: pinPulse 2.5s infinite ease-in-out;
-    }
-
-    @keyframes pinPulse {
-      0%, 100% { r: 3px; fill-opacity: 0.4; }
-      50% { r: 5.5px; fill-opacity: 1; }
+      stroke: #c5a880;
+      stroke-width: 1;
+      stroke-opacity: 0.3;
+      fill: none;
     }
   </style>
 
   <!-- Card Frame -->
-  <rect class="card-border" x="15" y="15" width="800" height="170" rx="6" />
-
-  <!-- Side Accent Corner Brackets -->
-  <path d="M 15,35 L 15,15 L 35,15" fill="none" stroke="#ff6a00" stroke-width="3" filter="url(#orangeGlow)" />
-  <path d="M 815,145 L 815,165 L 795,165" fill="none" stroke="#ff6a00" stroke-width="3" filter="url(#orangeGlow)" />
+  <rect class="card-border" x="15" y="15" width="800" height="170" rx="12" />
 
   <!-- Left: Content details -->
   <g transform="translate(45, 45)">
-    <text class="project-title-glow">WANDERGLOW</text>
     <text class="project-title">WANDERGLOW</text>
-    <text x="145" y="5" class="project-subtitle">[ AI-POWERED TRAVEL ITINERARY GENERATOR ]</text>
+    <text x="145" y="-4" class="project-subtitle">[ AI-POWERED TRAVEL ITINERARY GENERATOR ]</text>
 
-    <text x="0" y="32" class="desc-text">• Integrates OpenAI GPT-4o with advanced constraints for multi-day itineraries.</text>
-    <text x="0" y="50" class="desc-text">• Secure FastAPI backend with JWT, MongoDB storage, and API query batching.</text>
-    <text x="0" y="68" class="desc-text">• React UI with Zustand state caching and skeleton loading for &lt;2s perceived loads.</text>
+    <text x="0" y="28" class="desc-text">• Integrates OpenAI GPT-4o with advanced constraints for multi-day itineraries.</text>
+    <text x="0" y="46" class="desc-text">• Secure FastAPI backend with JWT, MongoDB storage, and API query batching.</text>
+    <text x="0" y="64" class="desc-text">• React UI with Zustand state caching and skeleton loading for &lt;2s perceived loads.</text>
 
     <!-- Badges -->
     <g transform="translate(0, 88)">
@@ -138,39 +110,12 @@
   </g>
 
   <!-- Right: Travel Route HUD visualizer -->
-  <line x1="560" y1="30" x2="560" y2="170" stroke="#ff6a00" stroke-opacity="0.15" stroke-dasharray="5 5" />
+  <line x1="560" y1="30" x2="560" y2="170" stroke="#3a3a3c" stroke-width="1" stroke-opacity="0.5" />
 
-  <!-- Orbiting Flight Map Visual -->
   <g transform="translate(565, 30)">
-    <!-- Base Map Grid Frame -->
-    <rect x="15" y="10" width="210" height="120" rx="3" fill="#080c10" fill-opacity="0.5" stroke="#ff6a00" stroke-opacity="0.1" />
-
-    <g fill="none">
-      <!-- Latitude / Longitude lines -->
-      <ellipse cx="120" cy="70" rx="80" ry="40" stroke="#ff6a00" stroke-opacity="0.08" />
-      <ellipse cx="120" cy="70" rx="50" ry="25" stroke="#ff6a00" stroke-opacity="0.08" />
-      
-      <!-- Coordinate intersections -->
-      <line x1="40" y1="70" x2="200" y2="70" stroke="#ff6a00" stroke-opacity="0.08" />
-      <line x1="120" y1="10" x2="120" y2="130" stroke="#ff6a00" stroke-opacity="0.08" />
-
-      <!-- Flight Bezier Paths -->
-      <path class="flight-path" d="M 50,90 Q 90,20 150,40" />
-      <path class="flight-path" d="M 50,90 Q 110,120 190,80" stroke="#ffffff" />
-      
-      <!-- Origin Coordinate (Gurugram) -->
-      <circle cx="50" cy="90" r="4.5" fill="#ff6a00" filter="url(#orangeGlow)" />
-      <circle class="pulse-pin" cx="50" cy="90" r="4.5" fill="#ff6a00" />
-      
-      <!-- Destination Coordinate -->
-      <circle cx="150" cy="40" r="4.5" fill="#ff6a00" />
-      
-      <!-- Destination Coordinate -->
-      <circle cx="190" cy="80" r="4.5" fill="#ffffff" filter="url(#whiteGlow)" />
-      <circle class="pulse-pin" cx="190" cy="80" r="4.5" fill="#ffffff" />
-    </g>
-
-    <!-- Map Coordinate telemetry label -->
-    <text x="25" y="120" font-family="'Share Tech Mono', monospace" font-size="8" fill="#ff6a00" font-weight="bold">ROUTE_RESOLVER: GURUGRAM -> TOKYO</text>
+    <rect x="15" y="10" width="210" height="120" rx="6" fill="#09090b" fill-opacity="0.5" stroke="#3a3a3c" stroke-width="1" />
+    <path class="flight-path" d="M 50,90 Q 90,20 150,40" />
+    <circle cx="50" cy="90" r="4" fill="#c5a880" />
+    <circle cx="150" cy="40" r="4" fill="#ffffff" />
   </g>
 </svg>
