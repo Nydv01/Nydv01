@@ -30,6 +30,17 @@
       </feMerge>
     </filter>
 
+    <!-- Typewriter Clip Path (Corrected width to prevent clipping) -->
+    <clipPath id="typewriterClip">
+      <rect id="typewriterRect" x="60" y="145" width="0" height="30">
+        <animate attributeName="width" 
+                 values="0; 0; 600; 600; 0; 0" 
+                 keyTimes="0; 0.1; 0.5; 0.8; 0.9; 1" 
+                 dur="6s" 
+                 repeatCount="indefinite" />
+      </rect>
+    </clipPath>
+
     <!-- Circuit Laser Gradient -->
     <linearGradient id="laserGrad" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#9e00ff" stop-opacity="0" />
@@ -64,7 +75,16 @@
       font-weight: 700;
       font-size: 13px;
       fill: #9e00ff;
-      letter-spacing: 4px;
+      letter-spacing: 3px;
+    }
+
+    .subtitle-glow {
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 700;
+      font-size: 13px;
+      fill: #9e00ff;
+      letter-spacing: 3px;
+      opacity: 0.8;
       filter: url(#purpleGlow);
     }
 
@@ -139,6 +159,11 @@
       95% { transform: translate(-1px, 1px); stroke-opacity: 0.3; }
       97% { transform: translate(1px, -1px); }
     }
+
+    .cursor {
+      fill: #9e00ff;
+      filter: url(#purpleGlow);
+    }
   </style>
 
   <!-- Background Base -->
@@ -160,10 +185,28 @@
     <!-- Main Glowing Logo -->
     <text class="title-glow">NITIN YADAV</text>
     <text class="title">NITIN YADAV</text>
-
-    <!-- Subtitle Tech Role -->
-    <text y="30" class="subtitle">FULL-STACK ENGINEER / AI &amp; CYBERSECURITY</text>
   </g>
+
+  <!-- Single Typewriter Subtitle (Glow & Foreground) -->
+  <g clip-path="url(#typewriterClip)">
+    <text x="60" y="165" class="subtitle-glow">FULL-STACK ENGINEER // AI &amp; CYBERSECURITY</text>
+    <text x="60" y="165" class="subtitle">FULL-STACK ENGINEER // AI &amp; CYBERSECURITY</text>
+  </g>
+
+  <!-- Blinking Cursor following the typing text -->
+  <rect class="cursor" x="60" y="150" width="3" height="18">
+    <animateTransform attributeName="transform" 
+                      type="translate" 
+                      values="0 0; 0 0; 455 0; 455 0; 0 0; 0 0" 
+                      keyTimes="0; 0.1; 0.5; 0.8; 0.9; 1" 
+                      dur="6s" 
+                      repeatCount="indefinite" />
+    <animate attributeName="opacity" 
+             values="1;0;1;0;1" 
+             keyTimes="0;0.25;0.5;0.75;1" 
+             dur="1s" 
+             repeatCount="indefinite" />
+  </rect>
 
   <!-- Right Side: Developer Cockpit Telemetry Console -->
   <g transform="translate(560, 85)">
