@@ -1,0 +1,264 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 830 420" width="830" height="420">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="dbBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070a13" />
+      <stop offset="100%" stop-color="#020306" />
+    </linearGradient>
+
+    <!-- Glowing Filters -->
+    <filter id="purpleGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="5" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <filter id="cyanGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <filter id="greenGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&amp;family=Share+Tech+Mono&amp;display=swap');
+
+    .board-bg {
+      stroke: #64748b;
+      stroke-width: 1.5;
+      stroke-opacity: 0.2;
+      fill: url(#dbBg);
+    }
+
+    .column-border {
+      stroke: #00f3ff;
+      stroke-width: 1;
+      stroke-opacity: 0.15;
+      fill: #0c101d;
+      fill-opacity: 0.4;
+    }
+
+    .header-text {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 2px;
+      text-anchor: middle;
+    }
+
+    .label-ai { fill: #9e00ff; filter: url(#purpleGlow); }
+    .label-fs { fill: #00f3ff; filter: url(#cyanGlow); }
+    .label-sec { fill: #00ff66; filter: url(#greenGlow); }
+
+    .tech-item {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 11px;
+      fill: #e2e8f0;
+    }
+
+    .tech-category {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 8px;
+      font-weight: 700;
+      fill: #64748b;
+      letter-spacing: 1px;
+    }
+
+    /* Animation effects */
+    .net-node {
+      animation: nodePulse 2.5s infinite ease-in-out;
+    }
+    
+    .net-node-delayed {
+      animation: nodePulse 2.5s infinite ease-in-out;
+      animation-delay: 1.25s;
+    }
+
+    @keyframes nodePulse {
+      0%, 100% { r: 3px; opacity: 0.4; }
+      50% { r: 5.5px; opacity: 1; }
+    }
+
+    .data-line {
+      stroke-dasharray: 4 4;
+      animation: dashMove 5s linear infinite;
+    }
+
+    @keyframes dashMove {
+      to { stroke-dashoffset: -40; }
+    }
+
+    /* Cyber matrix scanlines */
+    .scan-rect {
+      fill: #00ff66;
+      fill-opacity: 0.03;
+      animation: scanSweep 3s linear infinite;
+    }
+
+    @keyframes scanSweep {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(290px); }
+    }
+
+    .progress-bar-fill {
+      animation: fillProgress 4s ease-in-out infinite alternate;
+    }
+
+    @keyframes fillProgress {
+      0% { width: 10px; }
+      100% { width: 130px; }
+    }
+  </style>
+
+  <!-- Frame Background -->
+  <rect class="board-bg" x="15" y="15" width="800" height="390" rx="8" />
+
+  <!-- Frame Decorative Details -->
+  <!-- Top Border Details -->
+  <line x1="15" y1="35" x2="815" y2="35" stroke="#64748b" stroke-opacity="0.15" />
+  <text x="415" y="27" font-family="'Orbitron', sans-serif" font-size="10" fill="#64748b" letter-spacing="3" text-anchor="middle">NITIN_YADAV: SYSTEMS_COCKPIT_v2.0</text>
+
+  <!-- COLUMN 1: AI / COGNITIVE SYSTEM (Left) -->
+  <g transform="translate(35, 55)">
+    <!-- Column Body -->
+    <rect class="column-border" x="0" y="0" width="240" height="330" rx="4" />
+    <path d="M 0,25 L 240,25" stroke="#9e00ff" stroke-opacity="0.25" />
+    <text x="120" y="17" class="header-text label-ai">COGNITIVE_AI_CORE</text>
+
+    <!-- AI Network Visual -->
+    <g transform="translate(35, 45)" stroke="#9e00ff" stroke-opacity="0.15" fill="none">
+      <!-- Connection Lines -->
+      <line class="data-line" x1="20" y1="30" x2="80" y2="15" stroke-width="1" />
+      <line class="data-line" x1="20" y1="30" x2="80" y2="45" stroke-width="1" />
+      <line class="data-line" x1="80" y1="15" x2="140" y2="30" stroke-width="1" />
+      <line class="data-line" x1="80" y1="45" x2="140" y2="30" stroke-width="1" />
+      
+      <!-- Nodes -->
+      <circle cx="20" cy="30" r="4" fill="#9e00ff" filter="url(#purpleGlow)" />
+      <circle class="net-node" cx="20" cy="30" r="4" fill="#9e00ff" />
+      
+      <circle cx="80" cy="15" r="4" fill="#00f3ff" filter="url(#cyanGlow)" />
+      <circle class="net-node-delayed" cx="80" cy="15" r="4" fill="#00f3ff" />
+      
+      <circle cx="80" cy="45" r="4" fill="#00f3ff" filter="url(#cyanGlow)" />
+      <circle class="net-node" cx="80" cy="45" r="4" fill="#00f3ff" />
+      
+      <circle cx="140" cy="30" r="4" fill="#9e00ff" filter="url(#purpleGlow)" />
+      <circle class="net-node-delayed" cx="140" cy="30" r="4" fill="#9e00ff" />
+    </g>
+
+    <!-- AI Skill Details -->
+    <g transform="translate(20, 125)">
+      <text y="0" class="tech-category">INTELLIGENCE_MODELS</text>
+      <text y="18" class="tech-item">• Generative AI: GPT-4o, Claude</text>
+      <text y="34" class="tech-item">• scikit-learn Algorithms</text>
+      <text y="50" class="tech-item">• Reinforcement (Q-Learning RL)</text>
+      
+      <text y="80" class="tech-category">DATA_PIPELINES</text>
+      <text y="98" class="tech-item">• LangChain Framework</text>
+      <text y="114" class="tech-item">• Retrieval-Augmented Gen (RAG)</text>
+      
+      <!-- Live compilation simulator -->
+      <text y="145" class="tech-category">OPTIMIZATION_ENGINE</text>
+      <text y="162" class="tech-item">Training Epoch: 94%</text>
+      <rect x="0" y="170" width="150" height="5" rx="2" fill="#1e293b" />
+      <rect class="progress-bar-fill" x="0" y="170" width="110" height="5" rx="2" fill="#9e00ff" filter="url(#purpleGlow)" />
+    </g>
+  </g>
+
+  <!-- COLUMN 2: FULL-STACK CORE (Center) -->
+  <g transform="translate(295, 55)">
+    <!-- Column Body -->
+    <rect class="column-border" x="0" y="0" width="240" height="330" rx="4" />
+    <path d="M 0,25 L 240,25" stroke="#00f3ff" stroke-opacity="0.25" />
+    <text x="120" y="17" class="header-text label-fs">FULLSTACK_ENGINE</text>
+
+    <!-- Isometric Server Racks visual -->
+    <g transform="translate(50, 45)" stroke="#00f3ff" stroke-opacity="0.2" fill="none">
+      <rect x="10" y="5" width="120" height="15" rx="2" stroke-width="1" />
+      <circle cx="20" cy="12" r="2.5" fill="#00ff66" filter="url(#greenGlow)" />
+      <line x1="35" y1="12" x2="115" y2="12" stroke-dasharray="3 3" />
+      
+      <rect x="10" y="27" width="120" height="15" rx="2" stroke-width="1" />
+      <circle cx="20" cy="34" r="2.5" fill="#00ff66" />
+      <line x1="35" y1="34" x2="115" y2="34" stroke-dasharray="3 3" />
+
+      <rect x="10" y="49" width="120" height="15" rx="2" stroke-width="1" />
+      <circle cx="20" cy="56" r="2.5" fill="#00f3ff" filter="url(#cyanGlow)" />
+      <line x1="35" y1="56" x2="115" y2="56" stroke-dasharray="3 3" />
+    </g>
+
+    <!-- Fullstack details -->
+    <g transform="translate(20, 125)">
+      <text y="0" class="tech-category">LANGUAGES</text>
+      <text y="18" class="tech-item">• Python, C++, TypeScript/JS</text>
+      <text y="34" class="tech-item">• SQL (Postgres), Java</text>
+
+      <text y="64" class="tech-category">FRONTEND_FLOW</text>
+      <text y="82" class="tech-item">• React, Next.js, Zustand</text>
+      <text y="98" class="tech-item">• Framer Motion, GSAP, Tailwind</text>
+
+      <text y="128" class="tech-category">BACKEND_&amp;_CLOUD</text>
+      <text y="146" class="tech-item">• FastAPI, Node.js, Django</text>
+      <text y="162" class="tech-item">• Supabase, MongoDB, Redis</text>
+      <text y="178" class="tech-item">• Docker, AWS, Git CI/CD</text>
+    </g>
+  </g>
+
+  <!-- COLUMN 3: SECURITY CONTROLS (Right) -->
+  <g transform="translate(555, 55)">
+    <!-- Column Body -->
+    <rect class="column-border" x="0" y="0" width="240" height="330" rx="4" />
+    <path d="M 0,25 L 240,25" stroke="#00ff66" stroke-opacity="0.25" />
+    <text x="120" y="17" class="header-text label-sec">SECURITY_GATEWAYS</text>
+
+    <!-- Blinking Matrix Scanlines -->
+    <g transform="translate(0, 25)">
+      <rect class="scan-rect" x="2" y="0" width="236" height="15" />
+    </g>
+
+    <!-- Radar Sweep Matrix Visual -->
+    <g transform="translate(70, 45)" stroke="#00ff66" stroke-opacity="0.15" fill="none">
+      <rect x="10" y="5" width="80" height="60" rx="4" />
+      <!-- Scanning Grid -->
+      <line x1="30" y1="5" x2="30" y2="65" />
+      <line x1="50" y1="5" x2="50" y2="65" />
+      <line x1="70" y1="5" x2="70" y2="65" />
+      <line x1="10" y1="20" x2="90" y2="20" />
+      <line x1="10" y1="35" x2="90" y2="35" />
+      <line x1="10" y1="50" x2="90" y2="50" />
+      <!-- Targets -->
+      <circle cx="50" cy="35" r="3" fill="#00ff66" filter="url(#greenGlow)" />
+      <path d="M 25,20 L 35,25" stroke="#ff3e3e" stroke-width="1.5" />
+      <circle cx="25" cy="20" r="2.5" fill="#ff3e3e" />
+    </g>
+
+    <!-- Security details -->
+    <g transform="translate(20, 125)">
+      <text y="0" class="tech-category">THREAT_MITIGATION</text>
+      <text y="18" class="tech-item">• OWASP Top 10 Hardening</text>
+      <text y="34" class="tech-item">• Input Sanitization / SQLi Guard</text>
+      <text y="50" class="tech-item">• XSS / CSRF Attack Prevention</text>
+
+      <text y="80" class="tech-category">GATEWAY_&amp;_AUTH</text>
+      <text y="98" class="tech-item">• JWT / OAuth 2.0 Protocols</text>
+      <text y="114" class="tech-item">• Role-Based Access Control</text>
+
+      <text y="145" class="tech-category">NETWORK_DIAGNOSTICS</text>
+      <text y="162" class="tech-item">• Intrusion Detection Systems</text>
+      <text y="178" class="tech-item">• Ethical Hacking &amp; Postman</text>
+    </g>
+  </g>
+</svg>
