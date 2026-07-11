@@ -121,7 +121,7 @@
     </g>
   </g>
 
-  <!-- Right: Project Descriptions and details (Stacked Vertically) -->
+  <!-- Right: Project Descriptions and details (Stacked Vertically, Full Width) -->
   <g transform="translate(275, 40)">
     <text class="project-title" y="10">AEGISNET</text>
     <text class="project-subtitle" y="26">[ AI CYBER THREAT DETECTOR AND RESPONSE SOC ]</text>

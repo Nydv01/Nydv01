@@ -74,7 +74,7 @@
 
   <!-- AegisNet Cyber SOC -->
   <a href="https://github.com/Nydv01/aegisnet-cyber-soc" target="_blank">
-    <img src="./aegisnet_card_v5.svg" width="100%" alt="AegisNet Project Card" />
+    <img src="./aegisnet_card_v6.svg" width="100%" alt="AegisNet Project Card" />
   </a>
   
   <br /><br />
