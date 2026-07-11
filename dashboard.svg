@@ -2,20 +2,12 @@
   <defs>
     <!-- Background Gradient -->
     <linearGradient id="dbBg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#070a13" />
-      <stop offset="100%" stop-color="#020306" />
+      <stop offset="0%" stop-color="#0e1013" />
+      <stop offset="100%" stop-color="#050607" />
     </linearGradient>
 
     <!-- Glowing Filters -->
-    <filter id="purpleGlow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="5" result="blur" />
-      <feMerge>
-        <feMergeNode in="blur" />
-        <feMergeNode in="SourceGraphic" />
-      </feMerge>
-    </filter>
-
-    <filter id="cyanGlow" x="-20%" y="-20%" width="140%" height="140%">
+    <filter id="orangeGlow" x="-20%" y="-20%" width="140%" height="140%">
       <feGaussianBlur stdDeviation="4" result="blur" />
       <feMerge>
         <feMergeNode in="blur" />
@@ -23,8 +15,8 @@
       </feMerge>
     </filter>
 
-    <filter id="greenGlow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="4" result="blur" />
+    <filter id="whiteGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
       <feMerge>
         <feMergeNode in="blur" />
         <feMergeNode in="SourceGraphic" />
@@ -36,18 +28,18 @@
     @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&amp;family=Share+Tech+Mono&amp;display=swap');
 
     .board-bg {
-      stroke: #64748b;
-      stroke-width: 1.5;
-      stroke-opacity: 0.2;
+      stroke: #ff6a00;
+      stroke-width: 1;
+      stroke-opacity: 0.15;
       fill: url(#dbBg);
     }
 
     .column-border {
-      stroke: #00f3ff;
+      stroke: #ff6a00;
       stroke-width: 1;
       stroke-opacity: 0.15;
       fill: #0c101d;
-      fill-opacity: 0.4;
+      fill-opacity: 0.2;
     }
 
     .header-text {
@@ -58,9 +50,8 @@
       text-anchor: middle;
     }
 
-    .label-ai { fill: #9e00ff; filter: url(#purpleGlow); }
-    .label-fs { fill: #00f3ff; filter: url(#cyanGlow); }
-    .label-sec { fill: #00ff66; filter: url(#greenGlow); }
+    .label-orange { fill: #ff6a00; filter: url(#orangeGlow); }
+    .label-white { fill: #ffffff; filter: url(#whiteGlow); }
 
     .tech-item {
       font-family: 'Share Tech Mono', monospace;
@@ -102,7 +93,7 @@
 
     /* Cyber matrix scanlines */
     .scan-rect {
-      fill: #00ff66;
+      fill: #ff6a00;
       fill-opacity: 0.03;
       animation: scanSweep 3s linear infinite;
     }
@@ -127,18 +118,18 @@
 
   <!-- Frame Decorative Details -->
   <!-- Top Border Details -->
-  <line x1="15" y1="35" x2="815" y2="35" stroke="#64748b" stroke-opacity="0.15" />
-  <text x="415" y="27" font-family="'Orbitron', sans-serif" font-size="10" fill="#64748b" letter-spacing="3" text-anchor="middle">NITIN_YADAV: SYSTEMS_COCKPIT_v2.0</text>
+  <line x1="15" y1="35" x2="815" y2="35" stroke="#ff6a00" stroke-opacity="0.15" />
+  <text x="415" y="27" font-family="'Orbitron', sans-serif" font-size="10" fill="#64748b" letter-spacing="3" text-anchor="middle">NITIN_YADAV: SYSTEMS_COCKPIT_v3.0</text>
 
   <!-- COLUMN 1: AI / COGNITIVE SYSTEM (Left) -->
   <g transform="translate(35, 55)">
     <!-- Column Body -->
     <rect class="column-border" x="0" y="0" width="240" height="330" rx="4" />
-    <path d="M 0,25 L 240,25" stroke="#9e00ff" stroke-opacity="0.25" />
-    <text x="120" y="17" class="header-text label-ai">COGNITIVE_AI_CORE</text>
+    <path d="M 0,25 L 240,25" stroke="#ff6a00" stroke-opacity="0.25" />
+    <text x="120" y="17" class="header-text label-orange">COGNITIVE_AI_CORE</text>
 
     <!-- AI Network Visual -->
-    <g transform="translate(35, 45)" stroke="#9e00ff" stroke-opacity="0.15" fill="none">
+    <g transform="translate(35, 45)" stroke="#ff6a00" stroke-opacity="0.15" fill="none">
       <!-- Connection Lines -->
       <line class="data-line" x1="20" y1="30" x2="80" y2="15" stroke-width="1" />
       <line class="data-line" x1="20" y1="30" x2="80" y2="45" stroke-width="1" />
@@ -146,17 +137,17 @@
       <line class="data-line" x1="80" y1="45" x2="140" y2="30" stroke-width="1" />
       
       <!-- Nodes -->
-      <circle cx="20" cy="30" r="4" fill="#9e00ff" filter="url(#purpleGlow)" />
-      <circle class="net-node" cx="20" cy="30" r="4" fill="#9e00ff" />
+      <circle cx="20" cy="30" r="4" fill="#ff6a00" filter="url(#orangeGlow)" />
+      <circle class="net-node" cx="20" cy="30" r="4" fill="#ff6a00" />
       
-      <circle cx="80" cy="15" r="4" fill="#00f3ff" filter="url(#cyanGlow)" />
-      <circle class="net-node-delayed" cx="80" cy="15" r="4" fill="#00f3ff" />
+      <circle cx="80" cy="15" r="4" fill="#ffffff" filter="url(#whiteGlow)" />
+      <circle class="net-node-delayed" cx="80" cy="15" r="4" fill="#ffffff" />
       
-      <circle cx="80" cy="45" r="4" fill="#00f3ff" filter="url(#cyanGlow)" />
-      <circle class="net-node" cx="80" cy="45" r="4" fill="#00f3ff" />
+      <circle cx="80" cy="45" r="4" fill="#ffffff" filter="url(#whiteGlow)" />
+      <circle class="net-node" cx="80" cy="45" r="4" fill="#ffffff" />
       
-      <circle cx="140" cy="30" r="4" fill="#9e00ff" filter="url(#purpleGlow)" />
-      <circle class="net-node-delayed" cx="140" cy="30" r="4" fill="#9e00ff" />
+      <circle cx="140" cy="30" r="4" fill="#ff6a00" filter="url(#orangeGlow)" />
+      <circle class="net-node-delayed" cx="140" cy="30" r="4" fill="#ff6a00" />
     </g>
 
     <!-- AI Skill Details -->
@@ -174,7 +165,7 @@
       <text y="145" class="tech-category">OPTIMIZATION_ENGINE</text>
       <text y="162" class="tech-item">Training Epoch: 94%</text>
       <rect x="0" y="170" width="150" height="5" rx="2" fill="#1e293b" />
-      <rect class="progress-bar-fill" x="0" y="170" width="110" height="5" rx="2" fill="#9e00ff" filter="url(#purpleGlow)" />
+      <rect class="progress-bar-fill" x="0" y="170" width="110" height="5" rx="2" fill="#ff6a00" filter="url(#orangeGlow)" />
     </g>
   </g>
 
@@ -182,21 +173,21 @@
   <g transform="translate(295, 55)">
     <!-- Column Body -->
     <rect class="column-border" x="0" y="0" width="240" height="330" rx="4" />
-    <path d="M 0,25 L 240,25" stroke="#00f3ff" stroke-opacity="0.25" />
-    <text x="120" y="17" class="header-text label-fs">FULLSTACK_ENGINE</text>
+    <path d="M 0,25 L 240,25" stroke="#ff6a00" stroke-opacity="0.25" />
+    <text x="120" y="17" class="header-text label-white">FULLSTACK_ENGINE</text>
 
     <!-- Isometric Server Racks visual -->
-    <g transform="translate(50, 45)" stroke="#00f3ff" stroke-opacity="0.2" fill="none">
+    <g transform="translate(50, 45)" stroke="#ff6a00" stroke-opacity="0.2" fill="none">
       <rect x="10" y="5" width="120" height="15" rx="2" stroke-width="1" />
-      <circle cx="20" cy="12" r="2.5" fill="#00ff66" filter="url(#greenGlow)" />
+      <circle cx="20" cy="12" r="2.5" fill="#ff6a00" filter="url(#orangeGlow)" />
       <line x1="35" y1="12" x2="115" y2="12" stroke-dasharray="3 3" />
       
       <rect x="10" y="27" width="120" height="15" rx="2" stroke-width="1" />
-      <circle cx="20" cy="34" r="2.5" fill="#00ff66" />
+      <circle cx="20" cy="34" r="2.5" fill="#ff6a00" />
       <line x1="35" y1="34" x2="115" y2="34" stroke-dasharray="3 3" />
 
       <rect x="10" y="49" width="120" height="15" rx="2" stroke-width="1" />
-      <circle cx="20" cy="56" r="2.5" fill="#00f3ff" filter="url(#cyanGlow)" />
+      <circle cx="20" cy="56" r="2.5" fill="#ffffff" filter="url(#whiteGlow)" />
       <line x1="35" y1="56" x2="115" y2="56" stroke-dasharray="3 3" />
     </g>
 
@@ -221,8 +212,8 @@
   <g transform="translate(555, 55)">
     <!-- Column Body -->
     <rect class="column-border" x="0" y="0" width="240" height="330" rx="4" />
-    <path d="M 0,25 L 240,25" stroke="#00ff66" stroke-opacity="0.25" />
-    <text x="120" y="17" class="header-text label-sec">SECURITY_GATEWAYS</text>
+    <path d="M 0,25 L 240,25" stroke="#ff6a00" stroke-opacity="0.25" />
+    <text x="120" y="17" class="header-text label-orange">SECURITY_GATEWAYS</text>
 
     <!-- Blinking Matrix Scanlines -->
     <g transform="translate(0, 25)">
@@ -230,7 +221,7 @@
     </g>
 
     <!-- Radar Sweep Matrix Visual -->
-    <g transform="translate(70, 45)" stroke="#00ff66" stroke-opacity="0.15" fill="none">
+    <g transform="translate(70, 45)" stroke="#ff6a00" stroke-opacity="0.15" fill="none">
       <rect x="10" y="5" width="80" height="60" rx="4" />
       <!-- Scanning Grid -->
       <line x1="30" y1="5" x2="30" y2="65" />
@@ -240,7 +231,7 @@
       <line x1="10" y1="35" x2="90" y2="35" />
       <line x1="10" y1="50" x2="90" y2="50" />
       <!-- Targets -->
-      <circle cx="50" cy="35" r="3" fill="#00ff66" filter="url(#greenGlow)" />
+      <circle cx="50" cy="35" r="3" fill="#ff6a00" filter="url(#orangeGlow)" />
       <path d="M 25,20 L 35,25" stroke="#ff3e3e" stroke-width="1.5" />
       <circle cx="25" cy="20" r="2.5" fill="#ff3e3e" />
     </g>

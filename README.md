@@ -8,8 +8,8 @@
 <br />
 
 > [!NOTE]
-> ### ⚙️ COGNITIVE DIAGNOSTIC // NITIN YADAV
-> **Full-Stack Software Engineer, AI/ML Researcher & Creative Coder** specializing in premium digital systems. I build secure backend APIs (FastAPI, Django, Node), optimize relational/document databases (Postgres, MongoDB, Supabase, Redis), and design high-fidelity frontends featuring 3D graphics, vector maps, and fluid micro-animations (Three.js, GLSL, GSAP, Framer Motion, Tone.js).
+> ### ⚙️ SYSTEM SCAN // NITIN YADAV
+> **Full-Stack Software Engineer, AI/ML Researcher & Creative Coder** dedicated to engineering high-performance, secure, and visually stunning digital products. I combine secure, production-grade backend logic (FastAPI, Django, Node) with fluid frontend telemetry and advanced 3D web graphics (Three.js, GLSL, GSAP, Framer Motion, Tone.js).
 
 ---
 
@@ -58,9 +58,9 @@
 ### 🚀 Highlighted Masterpieces (Featured Portfolios)
 
 <div align="center">
-  <!-- 3D Shader Proposal (3D Web graphics, GLSL shaders, Tone.js, GSAP) -->
+  <!-- Proposal (3D Web graphics, GLSL shaders, Tone.js, GSAP) -->
   <a href="https://github.com/Nydv01/kanak-proposal" target="_blank">
-    <img src="./proposal_card.svg" width="100%" alt="3D Shader Proposal Project Card" />
+    <img src="./proposal_card.svg" width="100%" alt="Proposal Project Card" />
   </a>
   
   <br /><br />
@@ -88,17 +88,15 @@
 ---
 
 ### 📊 Git Telemetry & Activity Metrics
-
 <div align="center">
-  <!-- Custom Offline Cockpit Stats SVG (Replaces unreliable third-party stats) -->
+  <!-- Custom Offline Cockpit Stats SVG -->
   <img src="./git_stats.svg" width="100%" alt="Nitin's Github Stats Dashboard" />
 </div>
 
 ---
 
 ### 🎓 Academic Qualifications & Certifications
-*   **VIT Bhopal University** — B.Tech in Computer Science Engineering (CSE Core) | **CGPA: 8.86 / 10.0** (2023 – 2027)
-*   **CBSE Boards** — CBSE Class XII (PCM): 80.3% | CBSE Class X: 89.4%
-*   **Google Cybersecurity Professional Certificate** — Network security, SIEM logs analysis, threat detection, Linux & SQL (2025)
-*   **Google Generative AI Certification** — LLM alignment, prompt engineering, model application workflows (2025)
-*   **Industrial IoT Markets & Security** — IoT architectures, cyber-physical threats, protocol security (2025)
+<div align="center">
+  <!-- Custom Offline Academic Credentials SVG -->
+  <img src="./academics.svg" width="100%" alt="Nitin's Academic & Certifications Dashboard" />
+</div>

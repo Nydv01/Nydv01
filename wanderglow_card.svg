@@ -2,12 +2,12 @@
   <defs>
     <!-- Background Gradient -->
     <linearGradient id="cardBg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0e1312" />
-      <stop offset="100%" stop-color="#020406" />
+      <stop offset="0%" stop-color="#0e1013" />
+      <stop offset="100%" stop-color="#050607" />
     </linearGradient>
 
     <!-- Glowing Filters -->
-    <filter id="goldGlow" x="-25%" y="-25%" width="150%" height="150%">
+    <filter id="orangeGlow" x="-25%" y="-25%" width="150%" height="150%">
       <feGaussianBlur stdDeviation="5" result="blur" />
       <feMerge>
         <feMergeNode in="blur" />
@@ -15,7 +15,7 @@
       </feMerge>
     </filter>
 
-    <filter id="cyanGlow" x="-25%" y="-25%" width="150%" height="150%">
+    <filter id="whiteGlow" x="-25%" y="-25%" width="150%" height="150%">
       <feGaussianBlur stdDeviation="4" result="blur" />
       <feMerge>
         <feMergeNode in="blur" />
@@ -28,7 +28,7 @@
     @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&amp;family=Share+Tech+Mono&amp;display=swap');
 
     .card-border {
-      stroke: #ffa500;
+      stroke: #ff6a00;
       stroke-width: 1.5;
       stroke-opacity: 0.25;
       fill: url(#cardBg);
@@ -46,16 +46,16 @@
       font-family: 'Orbitron', sans-serif;
       font-weight: 900;
       font-size: 18px;
-      fill: #ffa500;
+      fill: #ff6a00;
       letter-spacing: 2px;
       opacity: 0.85;
-      filter: url(#goldGlow);
+      filter: url(#orangeGlow);
     }
 
     .project-subtitle {
       font-family: 'Share Tech Mono', monospace;
       font-size: 11px;
-      fill: #ffa500;
+      fill: #ff6a00;
       letter-spacing: 1px;
     }
 
@@ -67,7 +67,7 @@
 
     .badge-rect {
       fill: #0c101d;
-      stroke: #ffa500;
+      stroke: #ff6a00;
       stroke-opacity: 0.3;
       stroke-dasharray: 4 2;
     }
@@ -81,7 +81,7 @@
 
     /* Orbital Routes Animation */
     .flight-path {
-      stroke: #ffa500;
+      stroke: #ff6a00;
       stroke-width: 1.5;
       stroke-dasharray: 4 4;
       animation: flightFlow 6s linear infinite;
@@ -105,8 +105,8 @@
   <rect class="card-border" x="15" y="15" width="800" height="170" rx="6" />
 
   <!-- Side Accent Corner Brackets -->
-  <path d="M 15,35 L 15,15 L 35,15" fill="none" stroke="#ffa500" stroke-width="3" filter="url(#goldGlow)" />
-  <path d="M 815,145 L 815,165 L 795,165" fill="none" stroke="#ffa500" stroke-width="3" filter="url(#goldGlow)" />
+  <path d="M 15,35 L 15,15 L 35,15" fill="none" stroke="#ff6a00" stroke-width="3" filter="url(#orangeGlow)" />
+  <path d="M 815,145 L 815,165 L 795,165" fill="none" stroke="#ff6a00" stroke-width="3" filter="url(#orangeGlow)" />
 
   <!-- Left: Content details -->
   <g transform="translate(45, 45)">
@@ -138,39 +138,39 @@
   </g>
 
   <!-- Right: Travel Route HUD visualizer -->
-  <line x1="560" y1="30" x2="560" y2="170" stroke="#ffa500" stroke-opacity="0.15" stroke-dasharray="5 5" />
+  <line x1="560" y1="30" x2="560" y2="170" stroke="#ff6a00" stroke-opacity="0.15" stroke-dasharray="5 5" />
 
   <!-- Orbiting Flight Map Visual -->
   <g transform="translate(565, 30)">
     <!-- Base Map Grid Frame -->
-    <rect x="15" y="10" width="210" height="120" rx="3" fill="#080c10" fill-opacity="0.5" stroke="#ffa500" stroke-opacity="0.1" />
+    <rect x="15" y="10" width="210" height="120" rx="3" fill="#080c10" fill-opacity="0.5" stroke="#ff6a00" stroke-opacity="0.1" />
 
     <g fill="none">
       <!-- Latitude / Longitude lines -->
-      <ellipse cx="120" cy="70" rx="80" ry="40" stroke="#ffa500" stroke-opacity="0.08" />
-      <ellipse cx="120" cy="70" rx="50" ry="25" stroke="#ffa500" stroke-opacity="0.08" />
+      <ellipse cx="120" cy="70" rx="80" ry="40" stroke="#ff6a00" stroke-opacity="0.08" />
+      <ellipse cx="120" cy="70" rx="50" ry="25" stroke="#ff6a00" stroke-opacity="0.08" />
       
       <!-- Coordinate intersections -->
-      <line x1="40" y1="70" x2="200" y2="70" stroke="#ffa500" stroke-opacity="0.08" />
-      <line x1="120" y1="10" x2="120" y2="130" stroke="#ffa500" stroke-opacity="0.08" />
+      <line x1="40" y1="70" x2="200" y2="70" stroke="#ff6a00" stroke-opacity="0.08" />
+      <line x1="120" y1="10" x2="120" y2="130" stroke="#ff6a00" stroke-opacity="0.08" />
 
       <!-- Flight Bezier Paths -->
       <path class="flight-path" d="M 50,90 Q 90,20 150,40" />
-      <path class="flight-path" d="M 50,90 Q 110,120 190,80" stroke="#00f3ff" />
+      <path class="flight-path" d="M 50,90 Q 110,120 190,80" stroke="#ffffff" />
       
       <!-- Origin Coordinate (Gurugram) -->
-      <circle cx="50" cy="90" r="4.5" fill="#ffa500" filter="url(#goldGlow)" />
-      <circle class="pulse-pin" cx="50" cy="90" r="4.5" fill="#ffa500" />
+      <circle cx="50" cy="90" r="4.5" fill="#ff6a00" filter="url(#orangeGlow)" />
+      <circle class="pulse-pin" cx="50" cy="90" r="4.5" fill="#ff6a00" />
       
-      <!-- Destination Coordinate (Paris) -->
-      <circle cx="150" cy="40" r="4.5" fill="#ffa500" />
+      <!-- Destination Coordinate -->
+      <circle cx="150" cy="40" r="4.5" fill="#ff6a00" />
       
-      <!-- Destination Coordinate (Tokyo) -->
-      <circle cx="190" cy="80" r="4.5" fill="#00f3ff" filter="url(#cyanGlow)" />
-      <circle class="pulse-pin" cx="190" cy="80" r="4.5" fill="#00f3ff" />
+      <!-- Destination Coordinate -->
+      <circle cx="190" cy="80" r="4.5" fill="#ffffff" filter="url(#whiteGlow)" />
+      <circle class="pulse-pin" cx="190" cy="80" r="4.5" fill="#ffffff" />
     </g>
 
     <!-- Map Coordinate telemetry label -->
-    <text x="25" y="120" font-family="'Share Tech Mono', monospace" font-size="8" fill="#ffa500" font-weight="bold">ROUTE_RESOLVER: GURUGRAM -> TOKYO</text>
+    <text x="25" y="120" font-family="'Share Tech Mono', monospace" font-size="8" fill="#ff6a00" font-weight="bold">ROUTE_RESOLVER: GURUGRAM -> TOKYO</text>
   </g>
 </svg>

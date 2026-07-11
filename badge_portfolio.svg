@@ -2,8 +2,8 @@
   <defs>
     <!-- Background Gradient -->
     <linearGradient id="btnBg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0c101d" />
-      <stop offset="100%" stop-color="#04060b" />
+      <stop offset="0%" stop-color="#0e1013" />
+      <stop offset="100%" stop-color="#050607" />
     </linearGradient>
 
     <!-- Glow Filter -->
@@ -20,8 +20,8 @@
     @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&amp;family=Share+Tech+Mono&amp;display=swap');
     
     .btn-border {
-      stroke: #9e00ff;
-      stroke-width: 1.5;
+      stroke: #ff6a00;
+      stroke-width: 1.2;
       fill: url(#btnBg);
     }
 
@@ -29,19 +29,19 @@
       font-family: 'Orbitron', sans-serif;
       font-weight: 900;
       font-size: 11px;
-      fill: #ffffff;
+      fill: #f8fafc;
       letter-spacing: 2px;
     }
 
     .btn-text-secondary {
       font-family: 'Share Tech Mono', monospace;
       font-size: 11px;
-      fill: #9e00ff;
+      fill: #ff6a00;
       font-weight: bold;
     }
 
     .icon {
-      fill: #9e00ff;
+      fill: #ff6a00;
       filter: url(#neonGlow);
     }
   </style>
@@ -50,8 +50,8 @@
   <rect class="btn-border" x="2" y="2" width="246" height="46" rx="4" />
   
   <!-- Tactile Sci-fi Edges -->
-  <path d="M 2 12 L 2 2 L 12 2" fill="none" stroke="#9e00ff" stroke-width="2.5" filter="url(#neonGlow)" />
-  <path d="M 248 38 L 248 48 L 238 48" fill="none" stroke="#9e00ff" stroke-width="2.5" filter="url(#neonGlow)" />
+  <path d="M 2 12 L 2 2 L 12 2" fill="none" stroke="#ff6a00" stroke-width="2.5" filter="url(#neonGlow)" />
+  <path d="M 248 38 L 248 48 L 238 48" fill="none" stroke="#ff6a00" stroke-width="2.5" filter="url(#neonGlow)" />
 
   <!-- Globe/Web Icon -->
   <path class="icon" d="M 23 20 A 10 10 0 1 0 43 20 A 10 10 0 1 0 23 20 Z M 24 20 C 24 20 28 11 33 11 C 38 11 42 20 42 20 C 42 20 38 29 33 29 C 28 29 24 20 24 20 Z M 33 11 L 33 29 M 23.5 16 L 42.5 16 M 23.5 24 L 42.5 24" transform="translate(0, 5)" />

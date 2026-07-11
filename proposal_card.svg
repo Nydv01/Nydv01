@@ -2,12 +2,12 @@
   <defs>
     <!-- Background Gradient -->
     <linearGradient id="cardBg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#150a11" />
-      <stop offset="100%" stop-color="#050204" />
+      <stop offset="0%" stop-color="#0e1013" />
+      <stop offset="100%" stop-color="#050607" />
     </linearGradient>
 
     <!-- Glowing Filters -->
-    <filter id="pinkGlow" x="-25%" y="-25%" width="150%" height="150%">
+    <filter id="orangeGlow" x="-25%" y="-25%" width="150%" height="150%">
       <feGaussianBlur stdDeviation="5" result="blur" />
       <feMerge>
         <feMergeNode in="blur" />
@@ -15,7 +15,7 @@
       </feMerge>
     </filter>
 
-    <filter id="violetGlow" x="-25%" y="-25%" width="150%" height="150%">
+    <filter id="whiteGlow" x="-25%" y="-25%" width="150%" height="150%">
       <feGaussianBlur stdDeviation="4" result="blur" />
       <feMerge>
         <feMergeNode in="blur" />
@@ -28,7 +28,7 @@
     @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&amp;family=Share+Tech+Mono&amp;display=swap');
 
     .card-border {
-      stroke: #ff69b4;
+      stroke: #ff6a00;
       stroke-width: 1.5;
       stroke-opacity: 0.25;
       fill: url(#cardBg);
@@ -46,16 +46,16 @@
       font-family: 'Orbitron', sans-serif;
       font-weight: 900;
       font-size: 18px;
-      fill: #ff69b4;
+      fill: #ff6a00;
       letter-spacing: 2px;
       opacity: 0.85;
-      filter: url(#pinkGlow);
+      filter: url(#orangeGlow);
     }
 
     .project-subtitle {
       font-family: 'Share Tech Mono', monospace;
       font-size: 11px;
-      fill: #ff69b4;
+      fill: #ff6a00;
       letter-spacing: 1px;
     }
 
@@ -67,7 +67,7 @@
 
     .badge-rect {
       fill: #0c101d;
-      stroke: #ff69b4;
+      stroke: #ff6a00;
       stroke-opacity: 0.3;
       stroke-dasharray: 4 2;
     }
@@ -82,7 +82,7 @@
     /* Sine Wave Shaders Animation */
     .shader-wave {
       fill: none;
-      stroke: #ff69b4;
+      stroke: #ff6a00;
       stroke-width: 1.5;
       stroke-dasharray: 100;
       stroke-dashoffset: 100;
@@ -91,7 +91,7 @@
 
     .shader-wave-secondary {
       fill: none;
-      stroke: #9e00ff;
+      stroke: #ffffff;
       stroke-width: 1;
       stroke-dasharray: 80;
       stroke-dashoffset: 80;
@@ -105,14 +105,14 @@
 
     /* Floating particles */
     .particle {
-      fill: #ff69b4;
-      filter: url(#pinkGlow);
+      fill: #ff6a00;
+      filter: url(#orangeGlow);
       animation: floatUp 4s infinite ease-in-out;
     }
 
     .particle-delayed {
-      fill: #9e00ff;
-      filter: url(#violetGlow);
+      fill: #ffffff;
+      filter: url(#whiteGlow);
       animation: floatUp 4s infinite ease-in-out;
       animation-delay: 2s;
     }
@@ -128,14 +128,14 @@
   <rect class="card-border" x="15" y="15" width="800" height="170" rx="6" />
 
   <!-- Side Accent Corner Brackets -->
-  <path d="M 15,35 L 15,15 L 35,15" fill="none" stroke="#ff69b4" stroke-width="3" filter="url(#pinkGlow)" />
-  <path d="M 815,145 L 815,165 L 795,165" fill="none" stroke="#ff69b4" stroke-width="3" filter="url(#pinkGlow)" />
+  <path d="M 15,35 L 15,15 L 35,15" fill="none" stroke="#ff6a00" stroke-width="3" filter="url(#orangeGlow)" />
+  <path d="M 815,145 L 815,165 L 795,165" fill="none" stroke="#ff6a00" stroke-width="3" filter="url(#orangeGlow)" />
 
   <!-- Left: Project Descriptions -->
   <g transform="translate(45, 45)">
-    <text class="project-title-glow">3D SHADER PROPOSAL</text>
-    <text class="project-title">3D SHADER PROPOSAL</text>
-    <text x="180" y="5" class="project-subtitle">[ CINEMATIC LOVE LETTER EXPERIENCE ]</text>
+    <text class="project-title-glow">PROPOSAL</text>
+    <text class="project-title">PROPOSAL</text>
+    <text x="120" y="5" class="project-subtitle">[ CINEMATIC THREE.JS EXPERIENCE ]</text>
 
     <text x="0" y="32" class="desc-text">• Premium 3D shaders, custom GLSL vertices, and mathematical particles.</text>
     <text x="0" y="50" class="desc-text">• Highly interactive audio synthesized and scheduled in real-time via Tone.js.</text>
@@ -161,20 +161,19 @@
   </g>
 
   <!-- Right: Shaders Waveform HUD visualizer -->
-  <line x1="560" y1="30" x2="560" y2="170" stroke="#ff69b4" stroke-opacity="0.15" stroke-dasharray="5 5" />
+  <line x1="560" y1="30" x2="560" y2="170" stroke="#ff6a00" stroke-opacity="0.15" stroke-dasharray="5 5" />
 
   <!-- 3D Math / Confetti Telemetry Simulator -->
   <g transform="translate(565, 30)">
     <!-- Outer screen frame -->
-    <rect x="15" y="10" width="210" height="120" rx="3" fill="#0b050a" fill-opacity="0.5" stroke="#ff69b4" stroke-opacity="0.1" />
+    <rect x="15" y="10" width="210" height="120" rx="3" fill="#080c10" fill-opacity="0.5" stroke="#ff6a00" stroke-opacity="0.1" />
 
-    <!-- Heart Vector Outline -->
+    <!-- Pulsing math waveforms -->
     <g fill="none">
-      <!-- Pulsing math waveforms -->
       <path class="shader-wave" d="M 30,70 Q 55,20 85,85 T 145,55 T 195,70" />
       <path class="shader-wave-secondary" d="M 30,70 Q 60,110 100,55 T 160,85 T 195,70" />
 
-      <!-- Confetti Particles Float -->
+      <!-- Particles Float -->
       <circle class="particle" cx="70" cy="90" r="3" />
       <circle class="particle-delayed" cx="130" cy="110" r="2.5" />
       <circle class="particle" cx="160" cy="80" r="2" />
@@ -182,6 +181,6 @@
     </g>
 
     <!-- Telemetry Label -->
-    <text x="25" y="120" font-family="'Share Tech Mono', monospace" font-size="8" fill="#ff69b4" font-weight="bold">VERTEX_SHADER: COMPILING // 3D HEART NODES</text>
+    <text x="25" y="120" font-family="'Share Tech Mono', monospace" font-size="8" fill="#ff6a00" font-weight="bold">VERTEX_SHADER: COMPILING // 3D HEART NODES</text>
   </g>
 </svg>

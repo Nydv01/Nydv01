@@ -2,8 +2,8 @@
   <defs>
     <!-- Background Gradient -->
     <linearGradient id="btnBg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0c101d" />
-      <stop offset="100%" stop-color="#04060b" />
+      <stop offset="0%" stop-color="#0e1013" />
+      <stop offset="100%" stop-color="#050607" />
     </linearGradient>
 
     <!-- Glow Filter -->
@@ -20,8 +20,8 @@
     @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&amp;family=Share+Tech+Mono&amp;display=swap');
     
     .btn-border {
-      stroke: #00f3ff;
-      stroke-width: 1.5;
+      stroke: #ff6a00;
+      stroke-width: 1.2;
       fill: url(#btnBg);
     }
 
@@ -29,19 +29,19 @@
       font-family: 'Orbitron', sans-serif;
       font-weight: 900;
       font-size: 11px;
-      fill: #ffffff;
+      fill: #f8fafc;
       letter-spacing: 2px;
     }
 
     .btn-text-secondary {
       font-family: 'Share Tech Mono', monospace;
       font-size: 11px;
-      fill: #00f3ff;
+      fill: #ff6a00;
       font-weight: bold;
     }
 
     .icon {
-      fill: #00f3ff;
+      fill: #ff6a00;
       filter: url(#neonGlow);
     }
   </style>
@@ -50,8 +50,8 @@
   <rect class="btn-border" x="2" y="2" width="246" height="46" rx="4" />
   
   <!-- Tactile Sci-fi Edges -->
-  <path d="M 2 12 L 2 2 L 12 2" fill="none" stroke="#00f3ff" stroke-width="2.5" filter="url(#neonGlow)" />
-  <path d="M 248 38 L 248 48 L 238 48" fill="none" stroke="#00f3ff" stroke-width="2.5" filter="url(#neonGlow)" />
+  <path d="M 2 12 L 2 2 L 12 2" fill="none" stroke="#ff6a00" stroke-width="2.5" filter="url(#neonGlow)" />
+  <path d="M 248 38 L 248 48 L 238 48" fill="none" stroke="#ff6a00" stroke-width="2.5" filter="url(#neonGlow)" />
 
   <!-- LinkedIn Icon -->
   <path class="icon" d="M 23 18 L 43 18 C 45 18 47 20 47 22 L 47 42 C 47 44 45 46 43 46 L 23 46 C 21 46 19 44 19 42 L 19 22 C 19 20 21 18 23 18 Z M 27 22 C 25.3 22 24 23.3 24 25 C 24 26.7 25.3 28 27 28 C 28.7 28 30 26.7 30 25 C 30 23.3 28.7 22 27 22 Z M 24 30 L 30 30 L 30 42 L 24 42 Z M 32 30 L 38 30 L 38 32 C 39.5 30.5 41 30 43 30 C 45.5 30 47 31.5 47 34.5 L 47 42 L 41 42 L 41 35.5 C 41 34 40.5 33.5 39.5 33.5 C 38.5 33.5 38 34 38 35.5 L 38 42 L 32 42 Z" transform="scale(0.85) translate(4, 4)" />
