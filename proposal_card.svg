@@ -1,0 +1,187 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 830 200" width="830" height="200">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="cardBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#150a11" />
+      <stop offset="100%" stop-color="#050204" />
+    </linearGradient>
+
+    <!-- Glowing Filters -->
+    <filter id="pinkGlow" x="-25%" y="-25%" width="150%" height="150%">
+      <feGaussianBlur stdDeviation="5" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <filter id="violetGlow" x="-25%" y="-25%" width="150%" height="150%">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&amp;family=Share+Tech+Mono&amp;display=swap');
+
+    .card-border {
+      stroke: #ff69b4;
+      stroke-width: 1.5;
+      stroke-opacity: 0.25;
+      fill: url(#cardBg);
+    }
+
+    .project-title {
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 900;
+      font-size: 18px;
+      fill: #ffffff;
+      letter-spacing: 2px;
+    }
+
+    .project-title-glow {
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 900;
+      font-size: 18px;
+      fill: #ff69b4;
+      letter-spacing: 2px;
+      opacity: 0.85;
+      filter: url(#pinkGlow);
+    }
+
+    .project-subtitle {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 11px;
+      fill: #ff69b4;
+      letter-spacing: 1px;
+    }
+
+    .desc-text {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 12px;
+      fill: #e2e8f0;
+    }
+
+    .badge-rect {
+      fill: #0c101d;
+      stroke: #ff69b4;
+      stroke-opacity: 0.3;
+      stroke-dasharray: 4 2;
+    }
+
+    .badge-text {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 9px;
+      fill: #e2e8f0;
+      text-anchor: middle;
+    }
+
+    /* Sine Wave Shaders Animation */
+    .shader-wave {
+      fill: none;
+      stroke: #ff69b4;
+      stroke-width: 1.5;
+      stroke-dasharray: 100;
+      stroke-dashoffset: 100;
+      animation: waveMove 3s linear infinite;
+    }
+
+    .shader-wave-secondary {
+      fill: none;
+      stroke: #9e00ff;
+      stroke-width: 1;
+      stroke-dasharray: 80;
+      stroke-dashoffset: 80;
+      animation: waveMove 2.5s linear infinite reverse;
+    }
+
+    @keyframes waveMove {
+      0% { stroke-dashoffset: 200; }
+      100% { stroke-dashoffset: 0; }
+    }
+
+    /* Floating particles */
+    .particle {
+      fill: #ff69b4;
+      filter: url(#pinkGlow);
+      animation: floatUp 4s infinite ease-in-out;
+    }
+
+    .particle-delayed {
+      fill: #9e00ff;
+      filter: url(#violetGlow);
+      animation: floatUp 4s infinite ease-in-out;
+      animation-delay: 2s;
+    }
+
+    @keyframes floatUp {
+      0% { transform: translateY(0px) scale(1); opacity: 0.2; }
+      50% { transform: translateY(-15px) scale(1.3); opacity: 0.8; }
+      100% { transform: translateY(-30px) scale(0.8); opacity: 0; }
+    }
+  </style>
+
+  <!-- Card Frame -->
+  <rect class="card-border" x="15" y="15" width="800" height="170" rx="6" />
+
+  <!-- Side Accent Corner Brackets -->
+  <path d="M 15,35 L 15,15 L 35,15" fill="none" stroke="#ff69b4" stroke-width="3" filter="url(#pinkGlow)" />
+  <path d="M 815,145 L 815,165 L 795,165" fill="none" stroke="#ff69b4" stroke-width="3" filter="url(#pinkGlow)" />
+
+  <!-- Left: Project Descriptions -->
+  <g transform="translate(45, 45)">
+    <text class="project-title-glow">KANAK PROPOSAL</text>
+    <text class="project-title">KANAK PROPOSAL</text>
+    <text x="180" y="5" class="project-subtitle">[ CINEMATIC LOVE LETTER EXPERIENCE ]</text>
+
+    <text x="0" y="32" class="desc-text">• Premium 3D shaders, custom GLSL vertices, and mathematical particles.</text>
+    <text x="0" y="50" class="desc-text">• Highly interactive audio synthesized and scheduled in real-time via Tone.js.</text>
+    <text x="0" y="68" class="desc-text">• Fluid scrolling transitions &amp; animations powered by GSAP and ScrollTrigger.</text>
+
+    <!-- Badges -->
+    <g transform="translate(0, 88)">
+      <rect class="badge-rect" x="0" y="0" width="70" height="18" rx="3" />
+      <text class="badge-text" x="35" y="12">THREE.JS</text>
+
+      <rect class="badge-rect" x="80" y="0" width="105" height="18" rx="3" />
+      <text class="badge-text" x="132.5" y="12">GLSL SHADERS</text>
+
+      <rect class="badge-rect" x="195" y="0" width="60" height="18" rx="3" />
+      <text class="badge-text" x="225" y="12">GSAP</text>
+
+      <rect class="badge-rect" x="265" y="0" width="65" height="18" rx="3" />
+      <text class="badge-text" x="297.5" y="12">TONE.JS</text>
+
+      <rect class="badge-rect" x="340" y="0" width="60" height="18" rx="3" />
+      <text class="badge-text" x="370" y="12">VITE</text>
+    </g>
+  </g>
+
+  <!-- Right: Shaders Waveform HUD visualizer -->
+  <line x1="560" y1="30" x2="560" y2="170" stroke="#ff69b4" stroke-opacity="0.15" stroke-dasharray="5 5" />
+
+  <!-- 3D Math / Confetti Telemetry Simulator -->
+  <g transform="translate(565, 30)">
+    <!-- Outer screen frame -->
+    <rect x="15" y="10" width="210" height="120" rx="3" fill="#0b050a" fill-opacity="0.5" stroke="#ff69b4" stroke-opacity="0.1" />
+
+    <!-- Heart Vector Outline -->
+    <g fill="none">
+      <!-- Pulsing math waveforms -->
+      <path class="shader-wave" d="M 30,70 Q 55,20 85,85 T 145,55 T 195,70" />
+      <path class="shader-wave-secondary" d="M 30,70 Q 60,110 100,55 T 160,85 T 195,70" />
+
+      <!-- Confetti Particles Float -->
+      <circle class="particle" cx="70" cy="90" r="3" />
+      <circle class="particle-delayed" cx="130" cy="110" r="2.5" />
+      <circle class="particle" cx="160" cy="80" r="2" />
+      <circle class="particle-delayed" cx="95" cy="60" r="3.5" />
+    </g>
+
+    <!-- Telemetry Label -->
+    <text x="25" y="120" font-family="'Share Tech Mono', monospace" font-size="8" fill="#ff69b4" font-weight="bold">VERTEX_SHADER: COMPILING // 3D HEART NODES</text>
+  </g>
+</svg>

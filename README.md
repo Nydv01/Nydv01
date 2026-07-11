@@ -8,7 +8,7 @@
 <br />
 
 ### 👤 Profile Introduction
-I am a **Full-Stack Software Engineer, AI/ML Researcher, and Cybersecurity Specialist** who designs premium, high-fidelity digital products. I combine secure, optimized backend microservices with state-of-the-art UI/UX, micro-animations, and responsive designs (using React, Framer Motion, and GSAP). I enjoy understanding how systems work under the hood and mitigations for real-world threat vectors.
+I am a **Full-Stack Software Engineer, AI/ML Researcher, and Creative Coder** dedicated to engineering high-performance, secure, and visually stunning digital products. I combine secure backends (FastAPI, Node, Django) and database optimization (PostgreSQL, Supabase, Redis) with **premium, high-fidelity UI/UX, micro-animations, and creative web graphics** (using React, Three.js, custom GLSL shaders, GSAP, and Tone.js). 
 
 ---
 
@@ -18,34 +18,34 @@ I am a **Full-Stack Software Engineer, AI/ML Researcher, and Cybersecurity Speci
   <table border="0" cellpadding="0" cellspacing="0" width="100%">
     <thead>
       <tr style="background-color: #0c101d;">
-        <th align="left" width="50%" style="padding: 10px; border: 1px solid #1f2937; color: #00f3ff; font-family: 'Orbitron', sans-serif;">📡 CONNECTION CHANNELS</th>
-        <th align="left" width="50%" style="padding: 10px; border: 1px solid #1f2937; color: #9e00ff; font-family: 'Orbitron', sans-serif;">🕹️ TARGET NODES</th>
+        <th align="left" width="50%" style="padding: 12px; border: 1px solid #1f2937; color: #00f3ff; font-family: 'Orbitron', sans-serif; font-size: 14px; letter-spacing: 1px;">📡 CONNECTION CHANNELS</th>
+        <th align="left" width="50%" style="padding: 12px; border: 1px solid #1f2937; color: #9e00ff; font-family: 'Orbitron', sans-serif; font-size: 14px; letter-spacing: 1px;">🕹️ TARGET NODES</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td style="padding: 10px; border: 1px solid #1f2937;"><strong>📧 Direct Email</strong></td>
-        <td style="padding: 10px; border: 1px solid #1f2937;"><a href="mailto:ydv.nitin2401@gmail.com">ydv.nitin2401@gmail.com</a></td>
+        <td style="padding: 12px; border: 1px solid #1f2937;"><strong>📧 Direct Email</strong></td>
+        <td style="padding: 12px; border: 1px solid #1f2937;"><a href="mailto:ydv.nitin2401@gmail.com" style="color: #00f3ff; font-weight: bold; text-decoration: none;">ydv.nitin2401@gmail.com</a></td>
       </tr>
       <tr>
-        <td style="padding: 10px; border: 1px solid #1f2937;"><strong>📞 Mobile Endpoint</strong></td>
-        <td style="padding: 10px; border: 1px solid #1f2937;"><a href="tel:+918685069281">+91 86850 69281</a></td>
+        <td style="padding: 12px; border: 1px solid #1f2937;"><strong>📞 Mobile Endpoint</strong></td>
+        <td style="padding: 12px; border: 1px solid #1f2937;"><a href="tel:+918685069281" style="color: #00f3ff; font-weight: bold; text-decoration: none;">+91 86850 69281</a></td>
       </tr>
       <tr>
-        <td style="padding: 10px; border: 1px solid #1f2937;"><strong>🌐 Portfolio Hub</strong></td>
-        <td style="padding: 10px; border: 1px solid #1f2937;"><a href="https://nitin-yadav.vercel.app" target="_blank">nitin-yadav.vercel.app</a></td>
+        <td style="padding: 12px; border: 1px solid #1f2937;"><strong>🌐 Creative Portfolio Hub</strong></td>
+        <td style="padding: 12px; border: 1px solid #1f2937;"><a href="https://nitin-yadav.vercel.app" target="_blank" style="color: #9e00ff; font-weight: bold; text-decoration: none;">nitin-yadav.vercel.app</a></td>
       </tr>
       <tr>
-        <td style="padding: 10px; border: 1px solid #1f2937;"><strong>💼 Professional Profile</strong></td>
-        <td style="padding: 10px; border: 1px solid #1f2937;"><a href="https://linkedin.com/in/ydv-nitin" target="_blank">linkedin.com/in/ydv-nitin</a></td>
+        <td style="padding: 12px; border: 1px solid #1f2937;"><strong>💼 Professional LinkedIn</strong></td>
+        <td style="padding: 12px; border: 1px solid #1f2937;"><a href="https://linkedin.com/in/ydv-nitin" target="_blank" style="color: #9e00ff; font-weight: bold; text-decoration: none;">linkedin.com/in/ydv-nitin</a></td>
       </tr>
       <tr>
-        <td style="padding: 10px; border: 1px solid #1f2937;"><strong>📍 Location Node</strong></td>
-        <td style="padding: 10px; border: 1px solid #1f2937;">Gurugram, Haryana, India</td>
+        <td style="padding: 12px; border: 1px solid #1f2937;"><strong>📍 Physical Geolocation Node</strong></td>
+        <td style="padding: 12px; border: 1px solid #1f2937; color: #e2e8f0;">Gurugram, Haryana, India</td>
       </tr>
-      <tr style="background-color: #0c101d;">
-        <td style="padding: 10px; border: 1px solid #1f2937;"><strong>📄 Full Resume / CV</strong></td>
-        <td style="padding: 10px; border: 1px solid #1f2937;"><strong><a href="https://nitin-yadav.vercel.app" target="_blank">👉 Click to Access Resume PDF 📄</a></strong></td>
+      <tr style="background-color: #070b13;">
+        <td style="padding: 12px; border: 1px solid #1f2937; color: #ff3e3e;"><strong>📄 Full PDF Resume / CV</strong></td>
+        <td style="padding: 12px; border: 1px solid #1f2937;"><strong><a href="https://nitin-yadav.vercel.app" target="_blank" style="color: #ff3e3e; font-weight: bold; text-decoration: underline;">👉 Access & Download My PDF Resume</a></strong></td>
       </tr>
     </tbody>
   </table>
@@ -63,27 +63,68 @@ I am a **Full-Stack Software Engineer, AI/ML Researcher, and Cybersecurity Speci
 
 ### 💼 Professional Experience & Timeline
 
-#### ⚙️ Software Engineering Intern | *Frigoglass India Pvt. Ltd.* (Nov 2025 – Jan 2026)
-*   **Database & Backend Optimization**: Optimized PostgreSQL indexing structures and FastAPI/Express endpoints, securing a **20% reduction in query latency** and improving platform throughput.
-*   **Secure Microservices**: Engineered Django-based microservices utilizing strict Pydantic validation schemas and input sanitization, mitigating OWASP Top 10 vulnerabilities at the API layer.
-*   **Core Systems integration**: Bridged responsive React UI frontends with high-availability PostgreSQL endpoints for the *Nexus Smart Campus* platform.
-*   **CI/CD Automation**: Orchestrated containerized Postman regression testing suites inside Docker pipelines, reducing deployment verification overhead by **30%**.
-
-#### 🎨 Frontend Developer Intern | *Panaversal Technologies*
-*   **High-End Web Graphics & UI/UX**: Architected modular, performance-optimized React/TypeScript components with Tailwind CSS, improving Lighthouse performance metrics by **15%**.
-*   **State Management**: Integrated RESTful API data layers with Zustand state management to eliminate redundant re-renders, achieving sub-100ms client-side state syncs.
-*   **Interactive Animations**: Engineered production-grade micro-animations and page transitions using Framer Motion and GSAP, boosting user engagement metrics across client portals.
-
-#### 🚀 Independent Full-Stack Developer (2023 – Present)
-*   **Client Deliverables**: Shipped **12+ production-grade web applications** and custom generative AI agents integrating Next.js, React, Node.js, and FastAPI backends.
-*   **Secure Integrations**: Implemented secure authentication workflows (JWT, OAuth 2.0) with Role-Based Access Control (RBAC) and Stripe payment gateway endpoints.
-*   **Deployment Pipeline**: Established containerized Docker deployment matrices across AWS, Vercel, and Render infrastructures.
+<div align="center">
+  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+    <thead>
+      <tr style="background-color: #0c101d;">
+        <th align="left" style="padding: 12px; border: 1px solid #1f2937; color: #00f3ff; font-family: 'Orbitron', sans-serif; font-size: 13px; letter-spacing: 1px;">💼 SYSTEM TIMELINE &amp; EXPERIENCE LOG</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="padding: 15px; border: 1px solid #1f2937; line-height: 1.7;">
+          <h4 style="margin-top: 0; color: #9e00ff; font-family: 'Orbitron', sans-serif; font-size: 14px;">⚙️ Software Engineering Intern | <em>Frigoglass India Pvt. Ltd.</em> <span style="float: right; color: #64748b; font-size: 11px;">Nov 2025 – Jan 2026</span></h4>
+          <ul>
+            <li><strong>Database Optimization</strong>: Redesigned and optimized PostgreSQL index matrices and FastAPI/Express APIs, resulting in a <span style="color: #00f3ff; font-weight: bold;">20% database query latency reduction</span>.</li>
+            <li><strong>Security Hardening</strong>: Engineered Django microservices featuring strict Pydantic input sanitization schemas, patching vulnerabilities against OWASP Top 10 exploits at the gateway layer.</li>
+            <li><strong>Systems Architecture</strong>: Bridged high-throughput React frontends with high-availability relational databases for the <em>Nexus Campus Super App</em>.</li>
+            <li><strong>Testing Automation</strong>: Containerized automated Postman verification pipelines inside Docker workflows, reducing manual QA cycles by <span style="color: #00f3ff; font-weight: bold;">30%</span>.</li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td style="padding: 15px; border: 1px solid #1f2937; line-height: 1.7;">
+          <h4 style="margin-top: 0; color: #00f3ff; font-family: 'Orbitron', sans-serif; font-size: 14px;">🎨 Frontend Developer Intern | <em>Panaversal Technologies</em></h4>
+          <ul>
+            <li><strong>Rich UX/UI &amp; Web Graphics</strong>: Built modular, responsive React UI modules with Tailwind CSS and advanced layouts, driving a <span style="color: #9e00ff; font-weight: bold;">15% increase in Lighthouse Performance Scores</span>.</li>
+            <li><strong>Telemetry &amp; State Sync</strong>: Synchronized API data structures client-side using Zustand state stores, eliminating redundant re-renders for sub-100ms client-server state coordination.</li>
+            <li><strong>Premium Motion Graphics</strong>: Coded interactive micro-animations and page transitions using GSAP and Framer Motion, enhancing retention metrics across portals.</li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td style="padding: 15px; border: 1px solid #1f2937; line-height: 1.7;">
+          <h4 style="margin-top: 0; color: #ff3e3e; font-family: 'Orbitron', sans-serif; font-size: 14px;">🚀 Independent Full-Stack Developer <span style="float: right; color: #64748b; font-size: 11px;">2023 – Present</span></h4>
+          <ul>
+            <li><strong>Full-Scale Delivery</strong>: Shipped <span style="color: #ff3e3e; font-weight: bold;">12+ production-grade web applications</span> and custom GenAI agents utilizing Next.js, React, Node, and FastAPI backends.</li>
+            <li><strong>Authentication &amp; Gateways</strong>: Wired secure JWT and OAuth 2.0 authentication workflows with Role-Based Access Control (RBAC) and Stripe billing layers.</li>
+            <li><strong>Deployment matrices</strong>: Set up automated CI/CD pipelines deploying Docker configurations onto AWS, Vercel, and Render clusters.</li>
+          </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
 ---
 
-### 🚀 Highlighted Masterpieces (Featured Projects)
+### 🚀 Highlighted Masterpieces (Featured Portfolios)
 
 <div align="center">
+  <!-- Kanak Proposal (3D Web graphics, GLSL shaders, Tone.js, GSAP) -->
+  <a href="https://github.com/Nydv01/kanak-proposal" target="_blank">
+    <img src="./proposal_card.svg" width="100%" alt="Kanak Proposal Project Card" />
+  </a>
+  
+  <br /><br />
+  
+  <!-- Nexus Campus Super App -->
+  <a href="https://github.com/Nydv01/nexus-campus-app-main" target="_blank">
+    <img src="./nexus_card.svg" width="100%" alt="Nexus Campus App Project Card" />
+  </a>
+  
+  <br /><br />
+
   <!-- AegisNet Cyber SOC -->
   <a href="https://github.com/Nydv01/aegisnet-cyber-soc" target="_blank">
     <img src="./aegisnet_card.svg" width="100%" alt="AegisNet Project Card" />
