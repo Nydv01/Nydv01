@@ -107,22 +107,22 @@
 
     <!-- Terminal logs -->
     <g transform="translate(10, 30)">
-      <text y="0" class="terminal-text">> initializing aegisnet_soc...</text>
-      <text y="15" class="terminal-success">[OK] models.RandomForest training completed</text>
-      <text y="30" class="terminal-text">> listening socket port 8080</text>
-      <text y="45" class="terminal-success">[SECURE] csrf, sql injection filters: ACTIVE</text>
-      <text y="60" class="terminal-text">> monitoring threat simulation chains...</text>
-      <text y="75" class="terminal-text">> threat index: 0.00% (idle)</text>
+      <text y="0" class="terminal-text">> init aegisnet_soc...</text>
+      <text y="15" class="terminal-success">[OK] RandomForest trained</text>
+      <text y="30" class="terminal-text">> port 8080 listening</text>
+      <text y="45" class="terminal-success">[SECURE] SQLi/CSRF: ACTIVE</text>
+      <text y="60" class="terminal-text">> monitoring threats...</text>
+      <text y="75" class="terminal-text">> threat level: 0.00%</text>
       
       <!-- Blinking cursor -->
-      <rect x="135" y="67" width="4" height="8" fill="#30d158">
+      <rect x="110" y="67" width="4" height="8" fill="#30d158">
         <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite" />
       </rect>
     </g>
   </g>
 
   <!-- Right: Project Descriptions and details (Stacked Vertically, Full Width) -->
-  <g transform="translate(275, 40)">
+  <g transform="translate(285, 40)">
     <text class="project-title" y="10">AEGISNET</text>
     <text class="project-subtitle" y="26">[ AI CYBER THREAT DETECTOR AND RESPONSE SOC ]</text>
 
