@@ -12,6 +12,7 @@
       <stop offset="100%" stop-color="#242426" />
     </linearGradient>
 
+    <!-- Soft Shadow -->
     <filter id="softShadow" x="-10%" y="-10%" width="120%" height="120%">
       <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#000000" flood-opacity="0.5" />
     </filter>
@@ -38,9 +39,9 @@
     .project-subtitle {
       font-family: 'Outfit', sans-serif;
       font-weight: 500;
-      font-size: 11px;
+      font-size: 10px;
       fill: #c5a880;
-      letter-spacing: 1px;
+      letter-spacing: 1.5px;
     }
 
     .desc-text {
@@ -62,17 +63,25 @@
       text-anchor: middle;
     }
 
-    /* Mobile Phone Wireframe elements */
-    .phone-body {
-      fill: #09090b;
-      stroke: #3a3a3c;
-      stroke-width: 1.5;
+    /* Radar / Location Circle Animation */
+    .radar-circle {
+      stroke: #c5a880;
+      stroke-opacity: 0.2;
+      stroke-width: 1;
+      fill: none;
     }
 
-    .phone-screen {
-      fill: #1c1c1e;
-      stroke: #2c2c2e;
-      stroke-width: 1;
+    .radar-circle-pulse {
+      stroke: #c5a880;
+      stroke-width: 1.5;
+      fill: none;
+      animation: mapPing 3s infinite ease-out;
+      transform-origin: 110px 75px;
+    }
+
+    @keyframes mapPing {
+      0% { r: 5px; opacity: 1; }
+      100% { r: 35px; opacity: 0; }
     }
 
     .map-grid {
@@ -80,44 +89,58 @@
       stroke-width: 0.5;
       stroke-opacity: 0.3;
     }
+
+    /* Bouncing map pin */
+    .map-pin {
+      animation: bounce 2s infinite ease-in-out;
+      transform-origin: 110px 75px;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
   </style>
 
   <!-- Card Frame -->
   <rect class="card-border" x="15" y="15" width="800" height="170" rx="12" />
 
   <!-- Left Side: Phone Application Preview Wireframe -->
-  <g transform="translate(45, 25)">
+  <g transform="translate(35, 25)">
     <!-- Phone Silhouette -->
-    <rect class="phone-body" x="0" y="0" width="80" height="150" rx="10" />
-    <!-- Screen -->
-    <rect class="phone-screen" x="5" y="10" width="70" height="130" rx="6" />
+    <rect x="0" y="0" width="220" height="150" rx="10" fill="#09090b" stroke="#3a3a3c" stroke-width="1.5" />
     
     <!-- Geolocation Grid in Screen -->
-    <line class="map-grid" x1="5" y1="40" x2="75" y2="40" />
-    <line class="map-grid" x1="5" y1="75" x2="75" y2="75" />
-    <line class="map-grid" x1="5" y1="110" x2="75" y2="110" />
-    <line class="map-grid" x1="25" y1="10" x2="25" y2="140" />
-    <line class="map-grid" x1="50" y1="10" x2="50" y2="140" />
+    <line class="map-grid" x1="0" y1="40" x2="220" y2="40" />
+    <line class="map-grid" x1="0" y1="75" x2="220" y2="75" />
+    <line class="map-grid" x1="0" y1="110" x2="220" y2="110" />
+    <line class="map-grid" x1="55" y1="0" x2="55" y2="150" />
+    <line class="map-grid" x1="110" y1="0" x2="110" y2="150" />
+    <line class="map-grid" x1="165" y1="0" x2="165" y2="150" />
 
-    <!-- Active Event Pins -->
-    <circle cx="35" cy="60" r="10" fill="none" stroke="#c5a880" stroke-opacity="0.3" />
-    <circle cx="35" cy="60" r="3" fill="#c5a880" />
-    
-    <circle cx="55" cy="100" r="2" fill="#ffffff" />
+    <!-- Active Event Pins & Pulse Rings -->
+    <circle cx="110" cy="75" r="25" class="radar-circle" />
+    <circle class="radar-circle-pulse" cx="110" cy="75" r="10" />
+
+    <!-- Pin -->
+    <g class="map-pin">
+      <path d="M 110,75 C 107,70 104,67 104,62 C 104,58 107,55 110,55 C 113,55 116,58 116,62 C 116,67 113,70 110,75 Z" fill="#c5a880" />
+      <circle cx="110" cy="62" r="2.5" fill="#09090b" />
+    </g>
   </g>
 
-  <!-- Right Side: Project descriptions -->
-  <g transform="translate(155, 45)">
-    <text class="project-title">NEXUS CAMPUS</text>
-    <text x="145" y="-4" class="project-subtitle">[ UNIVERSITY CAMPUS SUPER APP ]</text>
+  <!-- Right Side: Project descriptions (Stacked Vertically) -->
+  <g transform="translate(275, 40)">
+    <text class="project-title" y="10">NEXUS CAMPUS</text>
+    <text class="project-subtitle" y="26">[ UNIVERSITY CAMPUS SUPER APP ]</text>
 
     <!-- Details -->
-    <text x="0" y="28" class="desc-text">• Shipped a student social hub for course reviews, study groups, and trading.</text>
-    <text x="0" y="46" class="desc-text">• Engineered a secure student verification pipeline using Supabase RLS.</text>
-    <text x="0" y="64" class="desc-text">• Deployed interactive geolocation map markers mapping campus events in real-time.</text>
+    <text x="0" y="48" class="desc-text">• Shipped a student social hub for course reviews, study groups, and trading.</text>
+    <text x="0" y="66" class="desc-text">• Engineered a secure student verification pipeline using Supabase RLS.</text>
+    <text x="0" y="84" class="desc-text">• Deployed interactive geolocation map markers mapping campus events in real-time.</text>
 
     <!-- Badges -->
-    <g transform="translate(0, 88)">
+    <g transform="translate(0, 100)">
       <rect class="badge-rect" x="0" y="0" width="60" height="18" rx="3" />
       <text class="badge-text" x="30" y="12">REACT</text>
 

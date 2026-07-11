@@ -38,9 +38,9 @@
     .project-subtitle {
       font-family: 'Outfit', sans-serif;
       font-weight: 500;
-      font-size: 11px;
+      font-size: 10px;
       fill: #c5a880;
-      letter-spacing: 1px;
+      letter-spacing: 1.5px;
     }
 
     .desc-text {
@@ -111,22 +111,27 @@
     <text class="timeline-text" x="180" y="105">JFK</text>
     <text class="timeline-sub" x="180" y="118">New York</text>
 
+    <!-- Animated Transit Dot flying along the timeline path -->
+    <circle r="3" fill="#ffffff">
+      <animateMotion dur="5s" repeatCount="indefinite" path="M 40,75 L 110,75 L 180,75" />
+    </circle>
+
     <!-- Label -->
     <text x="110" y="32" class="timeline-text" fill="#c5a880" font-size="8">AI_FLIGHT_PLANNER: SUCCESS</text>
   </g>
 
-  <!-- Right Side: Project Descriptions -->
-  <g transform="translate(275, 45)">
-    <text class="project-title">WANDERGLOW</text>
-    <text x="125" y="-4" class="project-subtitle">[ AI-POWERED TRAVEL ITINERARY GENERATOR ]</text>
+  <!-- Right Side: Project Descriptions (Stacked Vertically) -->
+  <g transform="translate(275, 40)">
+    <text class="project-title" y="10">WANDERGLOW</text>
+    <text class="project-subtitle" y="26">[ AI-POWERED TRAVEL ITINERARY GENERATOR ]</text>
 
     <!-- Details -->
-    <text x="0" y="28" class="desc-text">• Integrates OpenAI GPT-4o with optimized prompt loops for structured multi-day trips.</text>
-    <text x="0" y="46" class="desc-text">• Engineered FastAPI routing nodes with MongoDB caching to store travel matrices.</text>
-    <text x="0" y="64" class="desc-text">• Built React UI caching with Zustand synchronising sub-100ms state updates.</text>
+    <text x="0" y="48" class="desc-text">• Integrates OpenAI GPT-4o with optimized prompt loops for structured multi-day trips.</text>
+    <text x="0" y="66" class="desc-text">• Engineered FastAPI routing nodes with MongoDB caching to store travel matrices.</text>
+    <text x="0" y="84" class="desc-text">• Built React UI caching with Zustand synchronising sub-100ms state updates.</text>
 
     <!-- Badges -->
-    <g transform="translate(0, 88)">
+    <g transform="translate(0, 100)">
       <rect class="badge-rect" x="0" y="0" width="60" height="18" rx="3" />
       <text class="badge-text" x="30" y="12">REACT</text>
 

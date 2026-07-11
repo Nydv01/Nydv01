@@ -38,9 +38,9 @@
     .project-subtitle {
       font-family: 'Outfit', sans-serif;
       font-weight: 500;
-      font-size: 11px;
+      font-size: 10px;
       fill: #c5a880;
-      letter-spacing: 1px;
+      letter-spacing: 1.5px;
     }
 
     .desc-text {
@@ -73,6 +73,19 @@
       fill: #ffffff;
       text-anchor: middle;
     }
+
+    /* Terminal Scanning Line */
+    .scan-line {
+      stroke: #30d158;
+      stroke-width: 1;
+      stroke-opacity: 0.2;
+      animation: sweepLine 3s linear infinite;
+    }
+
+    @keyframes sweepLine {
+      0% { y1: 15; y2: 15; }
+      100% { y1: 150; y2: 150; }
+    }
   </style>
 
   <!-- Card Frame -->
@@ -88,6 +101,9 @@
     <circle cx="10" cy="7.5" r="3" fill="#ff453a" />
     <circle cx="20" cy="7.5" r="3" fill="#ffcc00" />
     <circle cx="30" cy="7.5" r="3" fill="#30d158" />
+
+    <!-- Scanning visual line -->
+    <line class="scan-line" x1="0" y1="15" x2="220" y2="15" />
 
     <!-- Terminal logs -->
     <g transform="translate(10, 30)">
@@ -105,18 +121,18 @@
     </g>
   </g>
 
-  <!-- Right: Project Descriptions and details -->
-  <g transform="translate(275, 45)">
-    <text class="project-title">AEGISNET</text>
-    <text x="100" y="-4" class="project-subtitle">[ AI CYBER THREAT DETECTOR AND RESPONSE SOC ]</text>
+  <!-- Right: Project Descriptions and details (Stacked Vertically) -->
+  <g transform="translate(275, 40)">
+    <text class="project-title" y="10">AEGISNET</text>
+    <text class="project-subtitle" y="26">[ AI CYBER THREAT DETECTOR AND RESPONSE SOC ]</text>
 
     <!-- Details -->
-    <text x="0" y="28" class="desc-text">• Deployed a random forest classifier to identify cyber attacks in real-time.</text>
-    <text x="0" y="46" class="desc-text">• Wired WebSocket streaming pipeline feeding attack telemetry directly to React HUDs.</text>
-    <text x="0" y="64" class="desc-text">• Built Q-learning response agent nodes to auto-mitigate simulated DDoS threats.</text>
+    <text x="0" y="48" class="desc-text">• Deployed a random forest classifier to identify cyber attacks in real-time.</text>
+    <text x="0" y="66" class="desc-text">• Wired WebSocket streaming pipeline feeding attack telemetry directly to React HUDs.</text>
+    <text x="0" y="84" class="desc-text">• Built Q-learning response agent nodes to auto-mitigate simulated DDoS threats.</text>
 
     <!-- Badges -->
-    <g transform="translate(0, 88)">
+    <g transform="translate(0, 100)">
       <rect class="badge-rect" x="0" y="0" width="60" height="18" rx="3" />
       <text class="badge-text" x="30" y="12">REACT</text>
 
