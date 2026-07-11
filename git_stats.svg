@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 830 180" width="830" height="180">
   <defs>
-    <!-- Card Elevate Gradient -->
+    <!-- Background Gradient -->
     <linearGradient id="cardGrad" x1="0%" y1="0%" x2="0%" y2="100%">
       <stop offset="0%" stop-color="#1c1c1e" />
       <stop offset="100%" stop-color="#121214" />
@@ -18,182 +18,185 @@
       <stop offset="100%" stop-color="#dfc39a" />
     </linearGradient>
 
+    <linearGradient id="silverGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#8e8e93" />
+      <stop offset="100%" stop-color="#e5e7eb" />
+    </linearGradient>
+
     <linearGradient id="blueGrad" x1="0%" y1="100%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#0066cc" />
       <stop offset="100%" stop-color="#0080ff" />
     </linearGradient>
 
-    <linearGradient id="greenGrad" x1="0%" y1="100%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#248a3d" />
-      <stop offset="100%" stop-color="#30d158" />
-    </linearGradient>
-
-    <!-- Subtle Shadows -->
+    <!-- Soft Shadow -->
     <filter id="softShadow" x="-10%" y="-10%" width="120%" height="120%">
       <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#000000" flood-opacity="0.5" />
-    </filter>
-
-    <filter id="goldGlow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="3" result="blur" />
-      <feMerge>
-        <feMergeNode in="blur" />
-        <feMergeNode in="SourceGraphic" />
-      </feMerge>
     </filter>
   </defs>
 
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700&amp;family=SF+Pro+Text&amp;display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700&amp;display=swap');
 
     .board-bg {
       fill: #09090b;
     }
 
-    .widget-card {
+    .widget-panel {
       fill: url(#cardGrad);
       stroke: url(#frostBorder);
       stroke-width: 1;
       filter: url(#softShadow);
     }
 
-    .widget-title {
+    .section-title {
+      font-family: 'Outfit', -apple-system, sans-serif;
+      font-weight: 700;
+      font-size: 12px;
+      fill: #ffffff;
+      letter-spacing: 0.5px;
+    }
+
+    .metric-label {
       font-family: 'Outfit', -apple-system, sans-serif;
       font-weight: 500;
       font-size: 11px;
       fill: #8e8e93;
-      letter-spacing: 0.5px;
     }
 
-    .widget-value {
+    .metric-value {
       font-family: 'Outfit', -apple-system, sans-serif;
       font-weight: 700;
-      font-size: 22px;
-      fill: #f5f5f7;
+      font-size: 18px;
+      fill: #ffffff;
     }
 
-    .widget-desc {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    .metric-sub {
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
       font-size: 10px;
       fill: #8e8e93;
     }
 
-    /* Ring Gauge Animations */
+    /* Concentric Rings Styling */
     .ring-bg {
       fill: none;
       stroke: #2c2c2e;
-      stroke-width: 6;
+      stroke-width: 10;
     }
 
     .ring-fill {
       fill: none;
-      stroke-width: 6;
+      stroke-width: 10;
       stroke-linecap: round;
       transform: rotate(-90deg);
-      transform-origin: center;
+      transform-origin: 120px 90px;
     }
 
     .gold-ring {
       stroke: url(#goldGrad);
-      stroke-dasharray: 220;
-      stroke-dashoffset: 220;
+      stroke-dasharray: 345.5;
+      stroke-dashoffset: 345.5;
       animation: fillGold 1.5s ease-out forwards;
+    }
+
+    .silver-ring {
+      stroke: url(#silverGrad);
+      stroke-dasharray: 257.6;
+      stroke-dashoffset: 257.6;
+      animation: fillSilver 1.5s ease-out forwards;
+      animation-delay: 0.2s;
     }
 
     .blue-ring {
       stroke: url(#blueGrad);
-      stroke-dasharray: 220;
-      stroke-dashoffset: 220;
+      stroke-dasharray: 169.6;
+      stroke-dashoffset: 169.6;
       animation: fillBlue 1.5s ease-out forwards;
-      animation-delay: 0.2s;
-    }
-
-    .green-ring {
-      stroke: url(#greenGrad);
-      stroke-dasharray: 220;
-      stroke-dashoffset: 220;
-      animation: fillGreen 1.5s ease-out forwards;
       animation-delay: 0.4s;
     }
 
-    @keyframes fillGold { to { stroke-dashoffset: 35; } }   /* 84% fill */
-    @keyframes fillBlue { to { stroke-dashoffset: 66; } }   /* 70% fill */
-    @keyframes fillGreen { to { stroke-dashoffset: 10; } }  /* 95% fill */
+    @keyframes fillGold { to { stroke-dashoffset: 55; } }   /* 84% fill */
+    @keyframes fillSilver { to { stroke-dashoffset: 77; } } /* 70% fill */
+    @keyframes fillBlue { to { stroke-dashoffset: 17; } }   /* 90% fill */
 
-    /* Pulse/EKG Telemetry Animation */
-    .pulse-line {
+    /* Legend Indicator Dots */
+    .dot-gold { fill: url(#goldGrad); }
+    .dot-silver { fill: url(#silverGrad); }
+    .dot-blue { fill: url(#blueGrad); }
+
+    /* Signal status wave */
+    .pulse-wave {
       fill: none;
       stroke: #30d158;
       stroke-width: 1.5;
       stroke-linecap: round;
       stroke-linejoin: round;
-      stroke-dasharray: 100;
-      stroke-dashoffset: 100;
-      animation: sweepPulse 3s linear infinite;
+      stroke-dasharray: 60;
+      stroke-dashoffset: 60;
+      animation: sweep 3s linear infinite;
     }
 
-    @keyframes sweepPulse {
-      0% { stroke-dashoffset: 100; }
-      100% { stroke-dashoffset: -100; }
+    @keyframes sweep {
+      to { stroke-dashoffset: -60; }
     }
   </style>
 
-  <!-- Background base -->
+  <!-- Background Base -->
   <rect class="board-bg" width="100%" height="100%" rx="16" />
 
-  <!-- 4 Elevated Cards in Apple Row Layout -->
+  <!-- Main Unified Widget Card -->
+  <rect class="widget-panel" x="20" y="20" width="790" height="140" rx="12" />
+
+  <!-- Left: Concentric Activity Rings -->
+  <!-- Ring 1 (Gold): R=55, C=345.5 -->
+  <!-- Ring 2 (Silver): R=41, C=257.6 -->
+  <!-- Ring 3 (Blue): R=27, C=169.6 -->
+  <g>
+    <!-- Background Tracks -->
+    <circle class="ring-bg" cx="120" cy="90" r="55" />
+    <circle class="ring-bg" cx="120" cy="90" r="41" />
+    <circle class="ring-bg" cx="120" cy="90" r="27" />
+
+    <!-- Active Fills -->
+    <circle class="ring-fill gold-ring" cx="120" cy="90" r="55" />
+    <circle class="ring-fill silver-ring" cx="120" cy="90" r="41" />
+    <circle class="ring-fill blue-ring" cx="120" cy="90" r="27" />
+  </g>
+
+  <!-- Title over the Rings -->
+  <text x="210" y="52" class="section-title">📊 GIT TELEMETRY &amp; ACTIVITY MATRIX</text>
+
+  <!-- Grid Layout for Metrics -->
   
-  <!-- CARD 1: Commits -->
-  <g transform="translate(20, 20)">
-    <rect class="widget-card" width="180" height="140" rx="12" />
-    <text x="20" y="32" class="widget-title">COMMITS LOGGED</text>
-    <text x="20" y="62" class="widget-value">1,500+</text>
-    <text x="20" y="115" class="widget-desc">GitHub Contribution Index</text>
-
-    <!-- Ring Dial in corner -->
-    <g transform="translate(135, 55)">
-      <circle class="ring-bg" cx="0" cy="0" r="22" />
-      <circle class="ring-fill gold-ring" cx="0" cy="0" r="22" />
-    </g>
+  <!-- Column 1: Commits -->
+  <g transform="translate(210, 72)">
+    <circle cx="5" cy="8" r="4" class="dot-gold" />
+    <text x="18" y="12" class="metric-label">COMMITS</text>
+    <text x="18" y="32" class="metric-value">1,500+</text>
+    <text x="18" y="46" class="metric-sub">Contributions</text>
   </g>
 
-  <!-- CARD 2: Shipped Repos -->
-  <g transform="translate(215, 20)">
-    <rect class="widget-card" width="180" height="140" rx="12" />
-    <text x="20" y="32" class="widget-title">SHIPPED REPOS</text>
-    <text x="20" y="62" class="widget-value">24 Total</text>
-    <text x="20" y="115" class="widget-desc">Production Integrations</text>
-
-    <!-- Ring Dial in corner -->
-    <g transform="translate(135, 55)">
-      <circle class="ring-bg" cx="0" cy="0" r="22" />
-      <circle class="ring-fill blue-ring" cx="0" cy="0" r="22" />
-    </g>
+  <!-- Column 2: Repos -->
+  <g transform="translate(360, 72)">
+    <circle cx="5" cy="8" r="4" class="dot-silver" />
+    <text x="18" y="12" class="metric-label">REPOSITORIES</text>
+    <text x="18" y="32" class="metric-value">24 Total</text>
+    <text x="18" y="46" class="metric-sub">Modules Shipped</text>
   </g>
 
-  <!-- CARD 3: PR Merge Rate -->
-  <g transform="translate(410, 20)">
-    <rect class="widget-card" width="180" height="140" rx="12" />
-    <text x="20" y="32" class="widget-title">MERGE INTEGRITY</text>
-    <text x="20" y="62" class="widget-value">98.2%</text>
-    <text x="20" y="115" class="widget-desc">Pull Request Success</text>
-
-    <!-- Ring Dial in corner -->
-    <g transform="translate(135, 55)">
-      <circle class="ring-bg" cx="0" cy="0" r="22" />
-      <circle class="ring-fill green-ring" cx="0" cy="0" r="22" />
-    </g>
+  <!-- Column 3: Merge Integrity -->
+  <g transform="translate(520, 72)">
+    <circle cx="5" cy="8" r="4" class="dot-blue" />
+    <text x="18" y="12" class="metric-label">INTEGRITY</text>
+    <text x="18" y="32" class="metric-value">98.2%</text>
+    <text x="18" y="46" class="metric-sub">PR Merge Rate</text>
   </g>
 
-  <!-- CARD 4: System State EKG -->
-  <g transform="translate(605, 20)">
-    <rect class="widget-card" width="205" height="140" rx="12" />
-    <text x="20" y="32" class="widget-title">SYSTEM STATUS</text>
-    <text x="20" y="62" class="widget-value" fill="#30d158">ACTIVE</text>
-    <text x="20" y="115" class="widget-desc">Active Environment Log</text>
-
-    <!-- Pulse graph -->
-    <g transform="translate(100, 30)">
-      <path class="pulse-line" d="M 0,25 L 20,25 L 25,10 L 30,35 L 35,22 L 40,25 L 80,25" />
-    </g>
+  <!-- Column 4: System Pulse -->
+  <g transform="translate(680, 72)">
+    <text x="0" y="12" class="metric-label">SYSTEM STATE</text>
+    <text x="0" y="32" class="metric-value" fill="#30d158">ACTIVE</text>
+    
+    <!-- Animated signal EKG wave -->
+    <path class="pulse-wave" d="M 65,26 L 75,26 L 79,15 L 83,35 L 87,22 L 91,26 L 105,26" />
   </g>
 </svg>
