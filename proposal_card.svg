@@ -1,12 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 830 200" width="830" height="200">
   <defs>
     <!-- Background Gradient -->
-    <linearGradient id="cardBg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0e1013" />
-      <stop offset="100%" stop-color="#050607" />
-    </linearGradient>
-
-    <!-- Elevated Panel Color -->
     <linearGradient id="panelGrad" x1="0%" y1="0%" x2="0%" y2="100%">
       <stop offset="0%" stop-color="#1c1c1e" />
       <stop offset="100%" stop-color="#121214" />
@@ -18,14 +12,19 @@
       <stop offset="100%" stop-color="#242426" />
     </linearGradient>
 
-    <!-- Soft Shadow -->
+    <!-- Gold Accent Gradient -->
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#c5a880" />
+      <stop offset="100%" stop-color="#dfc39a" />
+    </linearGradient>
+
     <filter id="softShadow" x="-10%" y="-10%" width="120%" height="120%">
       <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#000000" flood-opacity="0.5" />
     </filter>
   </defs>
 
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@500;700;900&amp;family=SF+Pro+Text&amp;display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700;900&amp;display=swap');
 
     .card-border {
       stroke: url(#frostBorder);
@@ -34,26 +33,27 @@
       filter: url(#softShadow);
     }
 
-    .project-title {
+    .title-text {
       font-family: 'Outfit', sans-serif;
       font-weight: 900;
-      font-size: 18px;
+      font-size: 24px;
       fill: #ffffff;
-      letter-spacing: 2px;
+      letter-spacing: 4px;
     }
 
-    .project-subtitle {
+    .subtitle-text {
       font-family: 'Outfit', sans-serif;
       font-weight: 500;
       font-size: 11px;
       fill: #c5a880;
-      letter-spacing: 1px;
+      letter-spacing: 2px;
     }
 
     .desc-text {
-      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-      font-size: 12px;
-      fill: #e5e7eb;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 11px;
+      fill: #8e8e93;
+      text-anchor: middle;
     }
 
     .badge-rect {
@@ -69,68 +69,60 @@
       text-anchor: middle;
     }
 
-    /* Waveform Animation */
-    .shader-wave {
+    /* Abstract math waves */
+    .math-wave {
       fill: none;
-      stroke: #c5a880;
+      stroke: url(#goldGrad);
       stroke-width: 1.5;
-      stroke-dasharray: 100;
-      stroke-dashoffset: 100;
-      animation: waveMove 3s linear infinite;
+      stroke-opacity: 0.15;
     }
 
-    .shader-wave-secondary {
+    .math-wave-active {
       fill: none;
-      stroke: #8e8e93;
-      stroke-width: 1;
-      stroke-dasharray: 80;
-      stroke-dashoffset: 80;
-      animation: waveMove 2.5s linear infinite reverse;
+      stroke: url(#goldGrad);
+      stroke-width: 2;
+      stroke-dasharray: 120;
+      stroke-dashoffset: 120;
+      animation: waveFlow 4s linear infinite;
     }
 
-    @keyframes waveMove {
-      0% { stroke-dashoffset: 200; }
-      100% { stroke-dashoffset: 0; }
+    @keyframes waveFlow {
+      to { stroke-dashoffset: 0; }
     }
   </style>
 
   <!-- Card Frame -->
   <rect class="card-border" x="15" y="15" width="800" height="170" rx="12" />
 
-  <!-- Left: Project Descriptions -->
-  <g transform="translate(45, 45)">
-    <text class="project-title">PROPOSAL</text>
-    <text x="120" y="-4" class="project-subtitle">[ CINEMATIC THREE.JS EXPERIENCE ]</text>
+  <!-- Background Math waves (Abstract Shader representation) -->
+  <path class="math-wave" d="M 30,100 Q 150,20 300,120 T 600,80 T 800,100" />
+  <path class="math-wave" d="M 30,120 Q 200,160 400,60 T 700,140 T 800,120" stroke-opacity="0.08" />
+  <path class="math-wave-active" d="M 30,100 Q 150,20 300,120 T 600,80 T 800,100" />
 
-    <text x="0" y="28" class="desc-text">• Premium 3D shaders, custom GLSL vertices, and mathematical particles.</text>
-    <text x="0" y="46" class="desc-text">• Highly interactive audio synthesized and scheduled in real-time via Tone.js.</text>
-    <text x="0" y="64" class="desc-text">• Fluid scrolling transitions &amp; animations powered by GSAP and ScrollTrigger.</text>
+  <!-- Center Content Layout -->
+  <g transform="translate(415, 55)" text-anchor="middle">
+    <text class="title-text" y="10">PROPOSAL</text>
+    <text class="subtitle-text" y="30">[ THREE.JS SHADER EXPERIMENT ]</text>
+    
+    <text class="desc-text" y="55">A premium 3D math and particle workspace rendering GLSL vertex shaders</text>
+    <text class="desc-text" y="72">integrated with real-time Tone.js FM synthesis and GSAP ScrollTrigger timelines.</text>
 
-    <!-- Badges -->
-    <g transform="translate(0, 88)">
+    <!-- Badges Row -->
+    <g transform="translate(-190, 88)">
       <rect class="badge-rect" x="0" y="0" width="70" height="18" rx="3" />
       <text class="badge-text" x="35" y="12">THREE.JS</text>
 
-      <rect class="badge-rect" x="80" y="0" width="105" height="18" rx="3" />
-      <text class="badge-text" x="52.5" y="12" transform="translate(80, 0)">GLSL SHADERS</text>
+      <rect class="badge-rect" x="80" y="0" width="95" height="18" rx="3" />
+      <text class="badge-text" x="127.5" y="12">GLSL SHADERS</text>
 
-      <rect class="badge-rect" x="195" y="0" width="60" height="18" rx="3" />
-      <text class="badge-text" x="225" y="12">GSAP</text>
+      <rect class="badge-rect" x="185" y="0" width="60" height="18" rx="3" />
+      <text class="badge-text" x="215" y="12">GSAP</text>
 
-      <rect class="badge-rect" x="265" y="0" width="65" height="18" rx="3" />
-      <text class="badge-text" x="297.5" y="12">TONE.JS</text>
+      <rect class="badge-rect" x="255" y="0" width="60" height="18" rx="3" />
+      <text class="badge-text" x="285" y="12">TONE.JS</text>
 
-      <rect class="badge-rect" x="340" y="0" width="60" height="18" rx="3" />
-      <text class="badge-text" x="370" y="12">VITE</text>
+      <rect class="badge-rect" x="325" y="0" width="55" height="18" rx="3" />
+      <text class="badge-text" x="352.5" y="12">VITE</text>
     </g>
-  </g>
-
-  <!-- Right: Waveform HUD visualizer -->
-  <line x1="560" y1="30" x2="560" y2="170" stroke="#3a3a3c" stroke-width="1" stroke-opacity="0.5" />
-
-  <g transform="translate(565, 30)">
-    <rect x="15" y="10" width="210" height="120" rx="6" fill="#09090b" fill-opacity="0.5" stroke="#3a3a3c" stroke-width="1" />
-    <path class="shader-wave" d="M 30,70 Q 55,20 85,85 T 145,55 T 195,70" />
-    <path class="shader-wave-secondary" d="M 30,70 Q 60,110 100,55 T 160,85 T 195,70" />
   </g>
 </svg>

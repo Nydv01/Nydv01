@@ -1,12 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 830 200" width="830" height="200">
   <defs>
     <!-- Background Gradient -->
-    <linearGradient id="cardBg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0e1013" />
-      <stop offset="100%" stop-color="#050607" />
-    </linearGradient>
-
-    <!-- Elevated Panel Color -->
     <linearGradient id="panelGrad" x1="0%" y1="0%" x2="0%" y2="100%">
       <stop offset="0%" stop-color="#1c1c1e" />
       <stop offset="100%" stop-color="#121214" />
@@ -18,7 +12,6 @@
       <stop offset="100%" stop-color="#242426" />
     </linearGradient>
 
-    <!-- Soft Shadow -->
     <filter id="softShadow" x="-10%" y="-10%" width="120%" height="120%">
       <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#000000" flood-opacity="0.5" />
     </filter>
@@ -51,8 +44,8 @@
     }
 
     .desc-text {
-      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-      font-size: 12px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 11px;
       fill: #e5e7eb;
     }
 
@@ -69,39 +62,59 @@
       text-anchor: middle;
     }
 
-    /* Radar / Location Circle Animation */
-    .radar-circle {
-      stroke: #c5a880;
-      stroke-width: 1;
-      stroke-opacity: 0.25;
-      fill: none;
-    }
-
-    .radar-circle-pulse {
-      stroke: #c5a880;
+    /* Mobile Phone Wireframe elements */
+    .phone-body {
+      fill: #09090b;
+      stroke: #3a3a3c;
       stroke-width: 1.5;
-      fill: none;
-      animation: mapPing 3s infinite ease-out;
-      transform-origin: 670px 90px;
     }
 
-    @keyframes mapPing {
-      0% { r: 10px; opacity: 1; }
-      100% { r: 40px; opacity: 0; }
+    .phone-screen {
+      fill: #1c1c1e;
+      stroke: #2c2c2e;
+      stroke-width: 1;
+    }
+
+    .map-grid {
+      stroke: #3a3a3c;
+      stroke-width: 0.5;
+      stroke-opacity: 0.3;
     }
   </style>
 
   <!-- Card Frame -->
   <rect class="card-border" x="15" y="15" width="800" height="170" rx="12" />
 
-  <!-- Left: Content details -->
-  <g transform="translate(45, 45)">
+  <!-- Left Side: Phone Application Preview Wireframe -->
+  <g transform="translate(45, 25)">
+    <!-- Phone Silhouette -->
+    <rect class="phone-body" x="0" y="0" width="80" height="150" rx="10" />
+    <!-- Screen -->
+    <rect class="phone-screen" x="5" y="10" width="70" height="130" rx="6" />
+    
+    <!-- Geolocation Grid in Screen -->
+    <line class="map-grid" x1="5" y1="40" x2="75" y2="40" />
+    <line class="map-grid" x1="5" y1="75" x2="75" y2="75" />
+    <line class="map-grid" x1="5" y1="110" x2="75" y2="110" />
+    <line class="map-grid" x1="25" y1="10" x2="25" y2="140" />
+    <line class="map-grid" x1="50" y1="10" x2="50" y2="140" />
+
+    <!-- Active Event Pins -->
+    <circle cx="35" cy="60" r="10" fill="none" stroke="#c5a880" stroke-opacity="0.3" />
+    <circle cx="35" cy="60" r="3" fill="#c5a880" />
+    
+    <circle cx="55" cy="100" r="2" fill="#ffffff" />
+  </g>
+
+  <!-- Right Side: Project descriptions -->
+  <g transform="translate(155, 45)">
     <text class="project-title">NEXUS CAMPUS</text>
     <text x="145" y="-4" class="project-subtitle">[ UNIVERSITY CAMPUS SUPER APP ]</text>
 
-    <text x="0" y="28" class="desc-text">• Centralized university course reviews, study groups, and student trading.</text>
-    <text x="0" y="46" class="desc-text">• Secure student verification engine via Supabase RLS and JWT guards.</text>
-    <text x="0" y="64" class="desc-text">• Built interactive campus map pins displaying localized events via Leaflet.</text>
+    <!-- Details -->
+    <text x="0" y="28" class="desc-text">• Shipped a student social hub for course reviews, study groups, and trading.</text>
+    <text x="0" y="46" class="desc-text">• Engineered a secure student verification pipeline using Supabase RLS.</text>
+    <text x="0" y="64" class="desc-text">• Deployed interactive geolocation map markers mapping campus events in real-time.</text>
 
     <!-- Badges -->
     <g transform="translate(0, 88)">
@@ -120,17 +133,5 @@
       <rect class="badge-rect" x="330" y="0" width="75" height="18" rx="3" />
       <text class="badge-text" x="367.5" y="12">LEAFLET</text>
     </g>
-  </g>
-
-  <!-- Right: Campus Map Radar HUD visualizer -->
-  <line x1="560" y1="30" x2="560" y2="170" stroke="#3a3a3c" stroke-width="1" stroke-opacity="0.5" />
-
-  <g transform="translate(565, 30)">
-    <rect x="15" y="10" width="210" height="120" rx="6" fill="#09090b" fill-opacity="0.5" stroke="#3a3a3c" stroke-width="1" />
-    <circle cx="120" cy="70" r="25" class="radar-circle" />
-    <circle cx="120" cy="70" r="10" class="radar-circle" />
-    <circle class="radar-circle-pulse" cx="120" cy="70" r="15" />
-    <!-- Pin -->
-    <circle cx="120" cy="70" r="4" fill="#ffffff" />
   </g>
 </svg>

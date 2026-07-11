@@ -1,12 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 830 200" width="830" height="200">
   <defs>
     <!-- Background Gradient -->
-    <linearGradient id="cardBg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0e1013" />
-      <stop offset="100%" stop-color="#050607" />
-    </linearGradient>
-
-    <!-- Elevated Panel Color -->
     <linearGradient id="panelGrad" x1="0%" y1="0%" x2="0%" y2="100%">
       <stop offset="0%" stop-color="#1c1c1e" />
       <stop offset="100%" stop-color="#121214" />
@@ -18,14 +12,13 @@
       <stop offset="100%" stop-color="#242426" />
     </linearGradient>
 
-    <!-- Soft Shadow -->
     <filter id="softShadow" x="-10%" y="-10%" width="120%" height="120%">
       <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#000000" flood-opacity="0.5" />
     </filter>
   </defs>
 
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@500;700;900&amp;family=SF+Pro+Text&amp;display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@500;700;900&amp;family=Share+Tech+Mono&amp;display=swap');
 
     .card-border {
       stroke: url(#frostBorder);
@@ -51,8 +44,8 @@
     }
 
     .desc-text {
-      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-      font-size: 12px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 11px;
       fill: #e5e7eb;
     }
 
@@ -69,26 +62,68 @@
       text-anchor: middle;
     }
 
-    /* Orbital lines */
-    .flight-path {
+    /* Travel Timeline elements */
+    .timeline-node {
+      fill: #1c1c1e;
       stroke: #c5a880;
-      stroke-width: 1;
-      stroke-opacity: 0.3;
-      fill: none;
+      stroke-width: 1.5;
+    }
+
+    .timeline-text {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 10px;
+      fill: #ffffff;
+      text-anchor: middle;
+    }
+
+    .timeline-sub {
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 8px;
+      fill: #8e8e93;
+      text-anchor: middle;
     }
   </style>
 
   <!-- Card Frame -->
   <rect class="card-border" x="15" y="15" width="800" height="170" rx="12" />
 
-  <!-- Left: Content details -->
-  <g transform="translate(45, 45)">
-    <text class="project-title">WANDERGLOW</text>
-    <text x="145" y="-4" class="project-subtitle">[ AI-POWERED TRAVEL ITINERARY GENERATOR ]</text>
+  <!-- Left Side: Travel Itinerary Widget -->
+  <g transform="translate(35, 25)">
+    <!-- Terminal Screen -->
+    <rect x="0" y="0" width="220" height="150" rx="6" fill="#09090b" stroke="#3a3a3c" stroke-width="1" />
+    
+    <!-- Itinerary line connecting nodes -->
+    <line x1="40" y1="75" x2="180" y2="75" stroke="#3a3a3c" stroke-width="1" stroke-dasharray="3 3" />
+    <path d="M 40,75 L 180,75" stroke="#c5a880" stroke-width="1.2" stroke-opacity="0.4" />
 
-    <text x="0" y="28" class="desc-text">• Integrates OpenAI GPT-4o with advanced constraints for multi-day itineraries.</text>
-    <text x="0" y="46" class="desc-text">• Secure FastAPI backend with JWT, MongoDB storage, and API query batching.</text>
-    <text x="0" y="64" class="desc-text">• React UI with Zustand state caching and skeleton loading for &lt;2s perceived loads.</text>
+    <!-- Node 1: Delhi -->
+    <circle class="timeline-node" cx="40" cy="75" r="5" />
+    <text class="timeline-text" x="40" y="105">DEL</text>
+    <text class="timeline-sub" x="40" y="118">New Delhi</text>
+
+    <!-- Node 2: Tokyo -->
+    <circle class="timeline-node" cx="110" cy="75" r="5" />
+    <text class="timeline-text" x="110" y="105">TYO</text>
+    <text class="timeline-sub" x="110" y="118">Tokyo</text>
+
+    <!-- Node 3: New York -->
+    <circle class="timeline-node" cx="180" cy="75" r="5" />
+    <text class="timeline-text" x="180" y="105">JFK</text>
+    <text class="timeline-sub" x="180" y="118">New York</text>
+
+    <!-- Label -->
+    <text x="110" y="32" class="timeline-text" fill="#c5a880" font-size="8">AI_FLIGHT_PLANNER: SUCCESS</text>
+  </g>
+
+  <!-- Right Side: Project Descriptions -->
+  <g transform="translate(275, 45)">
+    <text class="project-title">WANDERGLOW</text>
+    <text x="125" y="-4" class="project-subtitle">[ AI-POWERED TRAVEL ITINERARY GENERATOR ]</text>
+
+    <!-- Details -->
+    <text x="0" y="28" class="desc-text">• Integrates OpenAI GPT-4o with optimized prompt loops for structured multi-day trips.</text>
+    <text x="0" y="46" class="desc-text">• Engineered FastAPI routing nodes with MongoDB caching to store travel matrices.</text>
+    <text x="0" y="64" class="desc-text">• Built React UI caching with Zustand synchronising sub-100ms state updates.</text>
 
     <!-- Badges -->
     <g transform="translate(0, 88)">
@@ -107,15 +142,5 @@
       <rect class="badge-rect" x="315" y="0" width="75" height="18" rx="3" />
       <text class="badge-text" x="352.5" y="12">ZUSTAND</text>
     </g>
-  </g>
-
-  <!-- Right: Travel Route HUD visualizer -->
-  <line x1="560" y1="30" x2="560" y2="170" stroke="#3a3a3c" stroke-width="1" stroke-opacity="0.5" />
-
-  <g transform="translate(565, 30)">
-    <rect x="15" y="10" width="210" height="120" rx="6" fill="#09090b" fill-opacity="0.5" stroke="#3a3a3c" stroke-width="1" />
-    <path class="flight-path" d="M 50,90 Q 90,20 150,40" />
-    <circle cx="50" cy="90" r="4" fill="#c5a880" />
-    <circle cx="150" cy="40" r="4" fill="#ffffff" />
   </g>
 </svg>
