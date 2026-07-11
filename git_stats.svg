@@ -1,0 +1,125 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 830 160" width="830" height="160">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="dbBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080c16" />
+      <stop offset="100%" stop-color="#020306" />
+    </linearGradient>
+
+    <!-- Glowing Filters -->
+    <filter id="purpleGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <filter id="cyanGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&amp;family=Share+Tech+Mono&amp;display=swap');
+
+    .board-bg {
+      stroke: #64748b;
+      stroke-width: 1;
+      stroke-opacity: 0.15;
+      fill: url(#dbBg);
+    }
+
+    .stat-box {
+      fill: #0c101d;
+      fill-opacity: 0.4;
+      stroke: #00f3ff;
+      stroke-opacity: 0.1;
+      stroke-width: 1;
+    }
+
+    .stat-title {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 9px;
+      font-weight: 700;
+      fill: #64748b;
+      letter-spacing: 1px;
+      text-anchor: middle;
+    }
+
+    .stat-value {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 20px;
+      font-weight: 900;
+      fill: #ffffff;
+      text-anchor: middle;
+    }
+
+    .stat-value-cyan { fill: #00f3ff; filter: url(#cyanGlow); }
+    .stat-value-purple { fill: #9e00ff; filter: url(#purpleGlow); }
+    .stat-value-green { fill: #00ff66; }
+
+    .divider {
+      stroke: #64748b;
+      stroke-opacity: 0.15;
+      stroke-dasharray: 4 4;
+    }
+  </style>
+
+  <!-- Background Base -->
+  <rect class="board-bg" x="15" y="15" width="800" height="130" rx="6" />
+
+  <!-- Section Title -->
+  <text x="415" y="32" font-family="'Orbitron', sans-serif" font-size="9" fill="#64748b" letter-spacing="3" text-anchor="middle">📡 GITHUB CONTRIBUTIONS &amp; ACTIVITY TELEMETRY</text>
+
+  <!-- 4 Columns Grid -->
+  
+  <!-- Column 1: Commits -->
+  <g transform="translate(30, 45)">
+    <rect class="stat-box" x="5" y="5" width="170" height="80" rx="4" />
+    <text x="90" y="28" class="stat-title">COMMITS LOGGED</text>
+    <text x="90" y="58" class="stat-value stat-value-cyan">1,500+</text>
+    <!-- Visual metric accent -->
+    <line x1="40" y1="70" x2="140" y2="70" stroke="#00f3ff" stroke-opacity="0.3" stroke-width="2" />
+  </g>
+
+  <!-- Divider 1 -->
+  <line class="divider" x1="220" y1="50" x2="220" y2="120" />
+
+  <!-- Column 2: Repos -->
+  <g transform="translate(225, 45)">
+    <rect class="stat-box" x="5" y="5" width="170" height="80" rx="4" />
+    <text x="90" y="28" class="stat-title">SHIPPED PROJECTS</text>
+    <text x="90" y="58" class="stat-value">24 Total</text>
+    <!-- Visual metric accent -->
+    <line x1="40" y1="70" x2="140" y2="70" stroke="#64748b" stroke-opacity="0.3" stroke-width="2" />
+  </g>
+
+  <!-- Divider 2 -->
+  <line class="divider" x1="415" y1="50" x2="415" y2="120" />
+
+  <!-- Column 3: PRs -->
+  <g transform="translate(420, 45)">
+    <rect class="stat-box" x="5" y="5" width="170" height="80" rx="4" />
+    <text x="90" y="28" class="stat-title">MERGE RATE</text>
+    <text x="90" y="58" class="stat-value stat-value-purple">98.2%</text>
+    <!-- Visual metric accent -->
+    <line x1="40" y1="70" x2="140" y2="70" stroke="#9e00ff" stroke-opacity="0.3" stroke-width="2" />
+  </g>
+
+  <!-- Divider 3 -->
+  <line class="divider" x1="610" y1="50" x2="610" y2="120" />
+
+  <!-- Column 4: Streak -->
+  <g transform="translate(615, 45)">
+    <rect class="stat-box" x="5" y="5" width="170" height="80" rx="4" />
+    <text x="90" y="28" class="stat-title">SYSTEM STATUS</text>
+    <text x="90" y="58" class="stat-value stat-value-green">ACTIVE</text>
+    <!-- Visual metric accent -->
+    <line x1="40" y1="70" x2="140" y2="70" stroke="#00ff66" stroke-opacity="0.3" stroke-width="2" />
+  </g>
+</svg>

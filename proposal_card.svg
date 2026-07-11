@@ -133,8 +133,8 @@
 
   <!-- Left: Project Descriptions -->
   <g transform="translate(45, 45)">
-    <text class="project-title-glow">KANAK PROPOSAL</text>
-    <text class="project-title">KANAK PROPOSAL</text>
+    <text class="project-title-glow">3D SHADER PROPOSAL</text>
+    <text class="project-title">3D SHADER PROPOSAL</text>
     <text x="180" y="5" class="project-subtitle">[ CINEMATIC LOVE LETTER EXPERIENCE ]</text>
 
     <text x="0" y="32" class="desc-text">• Premium 3D shaders, custom GLSL vertices, and mathematical particles.</text>

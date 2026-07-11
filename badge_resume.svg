@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 50" width="250" height="50">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="btnBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0c101d" />
+      <stop offset="100%" stop-color="#04060b" />
+    </linearGradient>
+
+    <!-- Glow Filter -->
+    <filter id="neonGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&amp;family=Share+Tech+Mono&amp;display=swap');
+    
+    .btn-border {
+      stroke: #ff3e3e;
+      stroke-width: 1.5;
+      fill: url(#btnBg);
+    }
+
+    .btn-text-primary {
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 900;
+      font-size: 11px;
+      fill: #ffffff;
+      letter-spacing: 2px;
+    }
+
+    .btn-text-secondary {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 11px;
+      fill: #ff3e3e;
+      font-weight: bold;
+    }
+
+    .icon {
+      fill: #ff3e3e;
+      filter: url(#neonGlow);
+    }
+  </style>
+
+  <!-- Button Frame -->
+  <rect class="btn-border" x="2" y="2" width="246" height="46" rx="4" />
+  
+  <!-- Tactile Sci-fi Edges -->
+  <path d="M 2 12 L 2 2 L 12 2" fill="none" stroke="#ff3e3e" stroke-width="2.5" filter="url(#neonGlow)" />
+  <path d="M 248 38 L 248 48 L 238 48" fill="none" stroke="#ff3e3e" stroke-width="2.5" filter="url(#neonGlow)" />
+
+  <!-- Document/PDF Icon -->
+  <path class="icon" d="M 25 18 L 41 18 L 47 24 L 47 38 C 47 39 46 40 45 40 L 25 40 C 24 40 23 39 23 38 L 23 20 C 23 19 24 18 25 18 Z M 40 19 L 40 24 L 46 24 Z" />
+
+  <!-- Texts -->
+  <text x="60" y="23" class="btn-text-primary">PDF RESUME DOWNLOAD</text>
+  <text x="60" y="37" class="btn-text-secondary">Click to Access File</text>
+</svg>
